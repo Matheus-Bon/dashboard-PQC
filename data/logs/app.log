@@ -1,0 +1,371 @@
+2026-03-27 12:31:00,927 - __main__ - INFO - Dash app initialized
+2026-03-27 12:31:00,928 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:31:00,928 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:31:00,929 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:31:00,933 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:31:00,933 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:31:00,934 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:31:00,934 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.01s)
+2026-03-27 12:31:00,935 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:31:00,938 - src.shared.decorators - ERROR - Failed: remove_duplicates (0.00s) - unhashable type: 'dict'
+2026-03-27 12:31:00,939 - src.shared.decorators - ERROR - Failed: prepare_data (0.01s) - unhashable type: 'dict'
+2026-03-27 12:31:00,939 - __main__ - ERROR - Error loading app data: unhashable type: 'dict'
+2026-03-27 12:31:00,946 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:31:00,951 - dash.dash - INFO - Dash is running on http://127.0.0.1:8050/
+
+2026-03-27 12:31:03,650 - __main__ - INFO - Dash app initialized
+2026-03-27 12:31:03,651 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:31:03,652 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:31:03,652 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:31:03,655 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:31:03,656 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:31:03,657 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:31:03,657 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.01s)
+2026-03-27 12:31:03,658 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:31:03,659 - src.shared.decorators - ERROR - Failed: remove_duplicates (0.00s) - unhashable type: 'dict'
+2026-03-27 12:31:03,660 - src.shared.decorators - ERROR - Failed: prepare_data (0.01s) - unhashable type: 'dict'
+2026-03-27 12:31:03,660 - __main__ - ERROR - Error loading app data: unhashable type: 'dict'
+2026-03-27 12:31:03,667 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:32:30,963 - __main__ - INFO - Dash app initialized
+2026-03-27 12:32:30,965 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:32:30,966 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:32:30,966 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:32:30,967 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:32:30,968 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:32:30,969 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:32:30,969 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:32:30,969 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:32:30,970 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:32:30,977 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:32:30,977 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:32:30,979 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:32:30,979 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:32:30,983 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:32:30,983 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:32:30,984 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:32:30,992 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:32:33,875 - app_refactored_v2 - INFO - Dash app initialized
+2026-03-27 12:32:33,876 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:32:33,876 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:32:33,877 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:32:33,878 - src.data.loaders - INFO - Loaded 1 records from C:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:32:33,878 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:32:33,878 - app_refactored_v2 - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:32:33,878 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:32:33,878 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:32:33,879 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:32:33,881 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:32:33,881 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:32:33,882 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:32:33,882 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:32:33,885 - app_refactored_v2 - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:32:33,885 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:32:33,885 - app_refactored_v2 - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:32:50,342 - __main__ - INFO - Dash app initialized
+2026-03-27 12:32:50,342 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:32:50,343 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:32:50,343 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:32:50,345 - src.data.loaders - INFO - Loaded 1 records from C:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:32:50,345 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:32:50,345 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:32:50,345 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:32:50,346 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:32:50,346 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:32:50,349 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:32:50,349 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:32:50,350 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:32:50,350 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:32:50,353 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:32:50,354 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:32:50,354 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:32:50,363 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:32:50,366 - dash.dash - INFO - Dash is running on http://127.0.0.1:8050/
+
+2026-03-27 12:32:51,900 - __main__ - INFO - Dash app initialized
+2026-03-27 12:32:51,902 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:32:51,902 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:32:51,902 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:32:51,904 - src.data.loaders - INFO - Loaded 1 records from C:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:32:51,904 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:32:51,904 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:32:51,904 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:32:51,905 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:32:51,906 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:32:51,910 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:32:51,910 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:32:51,912 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:32:51,912 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:32:51,914 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:32:51,914 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:32:51,916 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:32:51,920 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:34:52,024 - __main__ - INFO - Dash app initialized
+2026-03-27 12:34:52,025 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:34:52,025 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:34:52,027 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:34:52,029 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:34:52,030 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:34:52,030 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:34:52,031 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:34:52,031 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:34:52,034 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:34:52,041 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:34:52,042 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:34:52,045 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:34:52,045 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:34:52,051 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:34:52,053 - src.shared.decorators - INFO - Completed: prepare_data (0.03s)
+2026-03-27 12:34:52,053 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:34:52,066 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:35:26,692 - __main__ - INFO - Dash app initialized
+2026-03-27 12:35:26,695 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:35:26,696 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:35:26,697 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:35:26,702 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:35:26,702 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:35:26,702 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:35:26,703 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.01s)
+2026-03-27 12:35:26,704 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:35:26,706 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:35:26,718 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:35:26,719 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:35:26,721 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:35:26,722 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:35:26,732 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:35:26,734 - src.shared.decorators - INFO - Completed: prepare_data (0.04s)
+2026-03-27 12:35:26,736 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:35:26,749 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:35:38,496 - __main__ - INFO - Dash app initialized
+2026-03-27 12:35:38,496 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:35:38,497 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:35:38,497 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:35:38,498 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:35:38,498 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:35:38,499 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:35:38,499 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:35:38,499 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:35:38,500 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:35:38,503 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:35:38,503 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:35:38,504 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:35:38,504 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:35:38,506 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:35:38,506 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:35:38,508 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:35:38,512 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:36:46,045 - __main__ - INFO - Dash app initialized
+2026-03-27 12:36:46,045 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:36:46,045 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:36:46,045 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:36:46,047 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:36:46,047 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:36:46,047 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:36:46,047 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:36:46,048 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:36:46,048 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:36:46,051 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:36:46,051 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:36:46,052 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:36:46,052 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:36:46,053 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:36:46,055 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:36:46,055 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:36:46,061 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:37:00,653 - __main__ - INFO - Dash app initialized
+2026-03-27 12:37:00,654 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:37:00,654 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:37:00,654 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:37:00,655 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:37:00,657 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:37:00,657 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:37:00,657 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:37:00,658 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:37:00,658 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:37:00,662 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:37:00,663 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:37:00,664 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:37:00,664 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:37:00,667 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:37:00,667 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:37:00,667 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:37:00,671 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:37:05,464 - __main__ - INFO - Dash app initialized
+2026-03-27 12:37:05,465 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:37:05,465 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:37:05,465 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:37:05,468 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:37:05,468 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:37:05,469 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:37:05,470 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:37:05,470 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:37:05,471 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:37:05,474 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:37:05,475 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:37:05,476 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:37:05,477 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:37:05,480 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:37:05,481 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:37:05,481 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:37:05,485 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:37:32,020 - __main__ - INFO - Dash app initialized
+2026-03-27 12:37:32,022 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:37:32,022 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:37:32,022 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:37:32,024 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:37:32,024 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:37:32,024 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:37:32,025 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:37:32,026 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:37:32,027 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:37:32,030 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:37:32,032 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:37:32,032 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:37:32,032 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:37:32,036 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:37:32,036 - src.shared.decorators - INFO - Completed: prepare_data (0.01s)
+2026-03-27 12:37:32,036 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:37:32,043 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:38:00,179 - __main__ - INFO - Dash app initialized
+2026-03-27 12:38:00,180 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:38:00,180 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:38:00,181 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:38:00,182 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:38:00,183 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:38:00,184 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:38:00,184 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:38:00,185 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:38:00,185 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:38:00,189 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:38:00,189 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:38:00,190 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:38:00,191 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:38:00,196 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:38:00,196 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:38:00,196 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:38:00,203 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:38:44,841 - __main__ - INFO - Dash app initialized
+2026-03-27 12:38:44,842 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:38:44,842 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:38:44,843 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:38:44,844 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:38:44,844 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:38:44,845 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:38:44,845 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:38:44,846 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:38:44,847 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:38:44,851 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:38:44,851 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:38:44,852 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:38:44,853 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:38:44,856 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:38:44,857 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:38:44,857 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:38:44,862 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:43:21,621 - __main__ - INFO - Dash app initialized
+2026-03-27 12:43:21,621 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:43:21,622 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:43:21,622 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:43:21,624 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:43:21,624 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:43:21,624 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:43:21,624 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:43:21,625 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:43:21,626 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:43:21,630 - src.shared.decorators - INFO - Completed: remove_duplicates (0.00s)
+2026-03-27 12:43:21,631 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:43:21,632 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:43:21,633 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:43:21,636 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:43:21,637 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:43:21,637 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:43:21,642 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:50:43,464 - __main__ - INFO - Dash app initialized
+2026-03-27 12:50:43,465 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:50:43,465 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:50:43,467 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:50:43,469 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:50:43,469 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:50:43,470 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:50:43,470 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:50:43,471 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:50:43,472 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:50:43,478 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:50:43,478 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:50:43,480 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:50:43,480 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:50:43,485 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:50:43,486 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:50:43,487 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:50:43,495 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:51:22,255 - __main__ - INFO - Dash app initialized
+2026-03-27 12:51:22,260 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:51:22,264 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:51:22,264 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:51:22,268 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:51:22,269 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:51:22,269 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:51:22,269 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.01s)
+2026-03-27 12:51:22,271 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:51:22,272 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:51:22,283 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:51:22,283 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:51:22,285 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:51:22,285 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:51:22,291 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:51:22,291 - src.shared.decorators - INFO - Completed: prepare_data (0.03s)
+2026-03-27 12:51:22,291 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:51:22,303 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:51:26,822 - __main__ - INFO - Dash app initialized
+2026-03-27 12:51:26,823 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:51:26,823 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:51:26,825 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:51:26,827 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:51:26,828 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:51:26,828 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:51:26,829 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:51:26,830 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:51:26,831 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:51:26,837 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:51:26,838 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:51:26,840 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:51:26,840 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:51:26,849 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:51:26,854 - src.shared.decorators - INFO - Completed: prepare_data (0.03s)
+2026-03-27 12:51:26,856 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:51:26,865 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:52:17,467 - __main__ - INFO - Dash app initialized
+2026-03-27 12:52:17,468 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:52:17,468 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:52:17,468 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:52:17,471 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:52:17,471 - src.shared.decorators - INFO - Completed: load (0.00s)
+2026-03-27 12:52:17,471 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:52:17,471 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.00s)
+2026-03-27 12:52:17,471 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:52:17,471 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:52:17,478 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:52:17,478 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:52:17,478 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:52:17,478 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:52:17,489 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:52:17,489 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:52:17,489 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:52:17,499 - __main__ - INFO - Starting app on 127.0.0.1:8050
+2026-03-27 12:53:25,933 - __main__ - INFO - Dash app initialized
+2026-03-27 12:53:25,933 - src.shared.decorators - INFO - Starting: prepare_data
+2026-03-27 12:53:25,933 - src.shared.decorators - INFO - Starting: load_cloud_pricing_data
+2026-03-27 12:53:25,933 - src.shared.decorators - INFO - Starting: load
+2026-03-27 12:53:25,938 - src.data.loaders - INFO - Loaded 1 records from c:\Users\yurim\Downloads\dashboard\cloud_pricing.json
+2026-03-27 12:53:25,939 - src.shared.decorators - INFO - Completed: load (0.01s)
+2026-03-27 12:53:25,939 - __main__ - INFO - Loaded cloud pricing data: 1 rows
+2026-03-27 12:53:25,939 - src.shared.decorators - INFO - Completed: load_cloud_pricing_data (0.01s)
+2026-03-27 12:53:25,940 - src.shared.decorators - INFO - Starting: remove_duplicates
+2026-03-27 12:53:25,942 - src.data.transformers - WARNING - Found unhashable types, converting to string for deduplication
+2026-03-27 12:53:25,946 - src.shared.decorators - INFO - Completed: remove_duplicates (0.01s)
+2026-03-27 12:53:25,946 - src.shared.decorators - INFO - Starting: fill_nulls
+2026-03-27 12:53:25,946 - src.shared.decorators - INFO - Completed: fill_nulls (0.00s)
+2026-03-27 12:53:25,946 - src.data.transformers - INFO - Completed 1 transformations. Result: 1 rows, 2 columns
+2026-03-27 12:53:25,954 - __main__ - INFO - Data validation summary: {'rows': 1, 'columns': 2, 'null_count': {'cost_model': 0, 'providers': 0}, 'duplicate_count': 0, 'memory_usage_mb': 0.000995635986328125, 'dtypes': {'cost_model': dtype('O'), 'providers': dtype('O')}}
+2026-03-27 12:53:25,954 - src.shared.decorators - INFO - Completed: prepare_data (0.02s)
+2026-03-27 12:53:25,956 - __main__ - INFO - App data loaded: 1 rows, 2 columns
+2026-03-27 12:53:25,964 - __main__ - INFO - Starting app on 127.0.0.1:8050

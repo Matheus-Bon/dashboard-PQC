@@ -1,0 +1,40 @@
+2026-03-27 11:32:06,205 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:06,216 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:06,229 - src.dw.etl.pipeline - INFO - ETL Pipeline initialized - Session ID: e5713358-343a-4b3a-a468-24d5c6850c38
+2026-03-27 11:32:06,230 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:06,230 - src.dw.etl.pipeline - INFO - Starting ETL Pipeline
+2026-03-27 11:32:06,230 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:06,231 - src.dw.etl.pipeline - INFO - Step 1: Creating database tables...
+2026-03-27 11:32:06,289 - src.dw.etl.pipeline - INFO - Step 2: Populating dimensions...
+2026-03-27 11:32:06,332 - src.dw.etl.loader - INFO - Logged ETL execution: e5713358-343a-4b3a-a468-24d5c6850c38 - POPULATE_DIMENSIONS - SUCCESS
+2026-03-27 11:32:06,332 - src.dw.etl.pipeline - INFO - Step 3: Loading fact table data...
+2026-03-27 11:32:06,332 - src.dw.etl.pipeline - WARNING - No benchmark data to load
+2026-03-27 11:32:06,333 - src.dw.etl.pipeline - INFO - Step 4: Running data quality checks...
+2026-03-27 11:32:06,354 - src.dw.etl.loader - INFO - Logged ETL execution: e5713358-343a-4b3a-a468-24d5c6850c38 - QUALITY_CHECKS - SUCCESS
+2026-03-27 11:32:06,354 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:06,362 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:06,366 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:06,370 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:25,572 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:25,572 - __main__ - INFO - STARTING ETL PIPELINE
+2026-03-27 11:32:25,572 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:25,572 - __main__ - INFO - Step 1: Checking database connection...
+2026-03-27 11:32:25,576 - __main__ - INFO - Database connection OK
+2026-03-27 11:32:25,576 - __main__ - INFO - Step 2: Starting ETL pipeline...
+2026-03-27 11:32:25,576 - src.dw.etl.pipeline - INFO - ETL Pipeline initialized - Session ID: fca351ea-1824-4545-b021-4826a1018b2f
+2026-03-27 11:32:25,576 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:25,576 - src.dw.etl.pipeline - INFO - Starting ETL Pipeline
+2026-03-27 11:32:25,576 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:25,576 - src.dw.etl.pipeline - INFO - Step 1: Creating database tables...
+2026-03-27 11:32:25,599 - src.dw.etl.pipeline - INFO - Step 2: Populating dimensions...
+2026-03-27 11:32:25,656 - src.dw.etl.loader - INFO - Logged ETL execution: fca351ea-1824-4545-b021-4826a1018b2f - POPULATE_DIMENSIONS - SUCCESS
+2026-03-27 11:32:25,656 - src.dw.etl.pipeline - INFO - Step 3: Loading fact table data...
+2026-03-27 11:32:25,656 - src.dw.etl.pipeline - WARNING - No benchmark data to load
+2026-03-27 11:32:25,656 - src.dw.etl.pipeline - INFO - Step 4: Running data quality checks...
+2026-03-27 11:32:25,664 - src.dw.etl.loader - INFO - Logged ETL execution: fca351ea-1824-4545-b021-4826a1018b2f - QUALITY_CHECKS - SUCCESS
+2026-03-27 11:32:25,664 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:25,664 - src.dw.etl.pipeline - INFO - ==================================================
+2026-03-27 11:32:25,664 - __main__ - INFO - ETL Pipeline completed successfully
+2026-03-27 11:32:25,664 - __main__ - INFO - ================================================================================
+2026-03-27 11:32:25,664 - __main__ - INFO - ETL EXECUTION COMPLETED SUCCESSFULLY
+2026-03-27 11:32:25,664 - __main__ - INFO - ================================================================================
