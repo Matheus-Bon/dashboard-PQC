@@ -11,24 +11,33 @@ services:
     volumes:
       - pqc_mysql_data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password_aqui"]
+      test:
+        [
+          "CMD",
+          "mysqladmin",
+          "ping",
+          "-h",
+          "localhost",
+          "-u",
+          "root",
+          "-proot_password_aqui",
+        ]
       interval: 10s
       timeout: 5s
       retries: 5
       start_period: 30s
 
-  # Serviço do dashboard (descomente para rodar tudo via Docker)
-  # app:
-  #   build: .
-  #   container_name: pqc_dashboard
-  #   restart: unless-stopped
-  #   env_file: .env
-  #   ports:
-  #     - "8050:8050"
-  #   depends_on:
-  #     db:
-  #       condition: service_healthy
-  #   command: gunicorn app:server --bind 0.0.0.0:8050 --workers 2
+  app:
+    build: .
+    container_name: pqc_dashboard
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "8050:8050"
+    depends_on:
+      db:
+        condition: service_healthy
+    command: python app.py
 
 volumes:
   pqc_mysql_data:

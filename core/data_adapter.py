@@ -1,6 +1,7 @@
 from __future__ import annotations
 import logging
 import os
+import re
 import threading
 import time
 from enum import Enum
@@ -22,6 +23,7 @@ _QUERY_ROW_LIMIT = int(os.getenv("QUERY_ROW_LIMIT", "10000"))
 class DataSource(Enum):
     MYSQL = "mysql"
     EXCEL = "excel"
+    RAW_EXCEL = "raw_excel"
     NONE = "none"
 
 def _build_mysql_url() -> str:
@@ -67,7 +69,9 @@ class DataStore:
     def _reload(self) -> None:
         source = self._detect_source()
 
-        if source == DataSource.MYSQL:
+        if source == DataSource.RAW_EXCEL:
+            df = self._load_from_raw_excel()
+        elif source == DataSource.MYSQL:
             self._auto_etl_if_needed()
             df = self._load_from_mysql()
         elif source == DataSource.EXCEL:
@@ -93,7 +97,15 @@ class DataStore:
         if self._source is not None:
             return self._source
 
-        if self._try_mysql():
+        override = os.getenv("DATA_SOURCE", "").strip().lower()
+        if override:
+            self._source = self._source_from_override(override)
+            return self._source
+
+        if self._try_raw_excel():
+            self._source = DataSource.RAW_EXCEL
+            logger.info("Fonte de dados: Excel bruto (dados bruto.xlsx)")
+        elif self._try_mysql():
             self._source = DataSource.MYSQL
             logger.info("Fonte de dados: MySQL")
         elif self._try_excel():
@@ -116,6 +128,14 @@ class DataStore:
         except Exception as exc:
             logger.info("MySQL indisponível: %s", exc)
             self._engine = None
+            return False
+
+    def _try_raw_excel(self) -> bool:
+        try:
+            from core.etl_engine import find_raw_excel
+            return find_raw_excel() is not None
+        except Exception as exc:
+            logger.info("Excel bruto indisponivel: %s", exc)
             return False
 
     def _auto_etl_if_needed(self) -> None:
@@ -152,6 +172,77 @@ class DataStore:
         except Exception as exc:
             logger.info("Planilha indisponível: %s", exc)
             return False
+
+    def _load_from_raw_excel(self) -> pd.DataFrame:
+        from core.etl_engine import load_raw_excel
+
+        raw_df = load_raw_excel()
+        if raw_df.empty:
+            return pd.DataFrame()
+
+        norm_map = {_normalize_col_name(col): col for col in raw_df.columns}
+
+        def pick(*names: str) -> Optional[str]:
+            return _pick_column(norm_map, *names)
+
+        def series(col_name: Optional[str], default=None) -> pd.Series:
+            if col_name is None:
+                return pd.Series([default] * len(raw_df))
+            return raw_df[col_name]
+
+        df = pd.DataFrame(
+            {
+                "library": series(pick("algoritmo", "algorithm", "library"), "unknown"),
+                "operation": series(pick("operacao", "operation"), "unknown"),
+                "environment": series(pick("provedor", "provider", "environment"), "unknown"),
+                "processor": series(pick("processador", "cpu_model", "processor"), "unknown"),
+                "operating_system": series(pick("os", "operating_system", "sistema_operacional"), "unknown"),
+                "environment_type": series(pick("environment_type", "tipo_ambiente", "ambiente_tipo"), None),
+                "ram_gb": series(pick("ram_gb", "ram", "memoria_gb"), None),
+                "vcpu": series(pick("vcpu", "vcpus", "cpu"), None),
+                "response_ms": series(pick("latencia_ms", "latency_ms", "execution_time_ms", "response_ms"), None),
+                "payload_kb": series(pick("payload_kb", "payload"), None),
+                "key_size_bytes": series(pick("tamanho_chave_bytes", "key_size_bytes", "key_size"), None),
+                "iterations": series(pick("iteracoes", "iterations"), None),
+                "vs_classic_pct": series(pick("vs_classico_pct", "vt_classico_pct", "vs_classic_pct"), None),
+                "hybrid_overhead_pct": series(pick("overhead_hibrido_pct", "hybrid_overhead_pct"), None),
+                "security_level": series(pick("security_level", "nivel_seguranca", "nivel_nist"), None),
+            }
+        )
+
+        crypto_col = pick("crypto_type", "tipo_cripto", "categoria")
+        if crypto_col is not None:
+            df["crypto_type"] = raw_df[crypto_col]
+        else:
+            df["crypto_type"] = _infer_crypto_type(df["library"])
+
+        if df["environment_type"].isna().all():
+            df["environment_type"] = _infer_environment_type(df["environment"])
+
+        return df
+
+    def _source_from_override(self, override: str) -> DataSource:
+        if override in {"raw", "raw_excel", "raw-xlsx"}:
+            if self._try_raw_excel():
+                logger.info("Fonte de dados (forcado): Excel bruto")
+                return DataSource.RAW_EXCEL
+            logger.warning("DATA_SOURCE=raw_excel definido, mas arquivo nao encontrado")
+            return DataSource.NONE
+        if override == "mysql":
+            if self._try_mysql():
+                logger.info("Fonte de dados (forcado): MySQL")
+                return DataSource.MYSQL
+            logger.warning("DATA_SOURCE=mysql definido, mas DB indisponivel")
+            return DataSource.NONE
+        if override == "excel":
+            if self._try_excel():
+                logger.info("Fonte de dados (forcado): Planilha Excel")
+                return DataSource.EXCEL
+            logger.warning("DATA_SOURCE=excel definido, mas planilha indisponivel")
+            return DataSource.NONE
+
+        logger.warning("DATA_SOURCE invalido: %s", override)
+        return DataSource.NONE
 
     def _load_from_mysql(self) -> pd.DataFrame:
         from sqlalchemy import create_engine, text
@@ -210,6 +301,44 @@ def _normalize_df(df: pd.DataFrame) -> pd.DataFrame:
             df.dropna(subset=[col], inplace=True)
 
     return df
+
+
+def _normalize_col_name(name: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "_", str(name).lower()).strip("_")
+
+
+def _pick_column(norm_map: dict[str, str], *candidates: str) -> Optional[str]:
+    for candidate in candidates:
+        key = _normalize_col_name(candidate)
+        if key in norm_map:
+            return norm_map[key]
+    return None
+
+
+def _infer_crypto_type(library: pd.Series) -> pd.Series:
+    def classify(name: str) -> str:
+        s = str(name).lower()
+        if "hybrid" in s or "+" in s:
+            return "hybrid"
+        if any(token in s for token in ("ml-kem", "ml-dsa", "slh-dsa", "sphincs", "pqc")):
+            return "pqc"
+        if any(token in s for token in ("rsa", "ecdsa", "ed25519", "ed448")):
+            return "classic"
+        return "classic"
+
+    return library.map(classify)
+
+
+def _infer_environment_type(environment: pd.Series) -> pd.Series:
+    def classify(value: str) -> str:
+        s = str(value).lower()
+        if "local" in s:
+            return "local"
+        if "vps" in s or "hostinger" in s:
+            return "vps"
+        return "cloud"
+
+    return environment.map(classify)
 
 _store = DataStore()
 
