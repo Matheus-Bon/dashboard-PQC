@@ -1,5 +1,6 @@
 from __future__ import annotations
 import logging
+import os
 import dash_bootstrap_components as dbc
 from dash import Dash
 from core.callbacks import register_callbacks
@@ -37,4 +38,5 @@ except Exception as exc:
     raise
 
 if __name__ == "__main__":
-    app.run(debug=False, host="localhost", port=8050)
+    port = int(os.environ.get("PORT", "8050"))
+    app.run(debug=False, host="0.0.0.0", port=port)
