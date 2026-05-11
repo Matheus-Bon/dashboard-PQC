@@ -60,16 +60,16 @@ def register_callbacks(app):
         try:
             result = run_etl()
             if result["status"] != "ok":
-                return _time.time(), f"✖ {result['message']}", "danger", True
+                return _time.time(), f"Erro: {result['message']}", "danger", True
             invalidate_cache()
             _cached_dashboard_payload.cache_clear()
             df = get_dataframe()
             n_rows = len(df)
             ts = _time.time()
-            msg = f"✔ ETL concluído — {n_rows:,} registros disponíveis no dashboard."
+            msg = f"Sucesso: ETL concluído — {n_rows:,} registros disponíveis no dashboard."
             return ts, msg, "success", True
         except Exception as exc:  # noqa: BLE001
-            return _time.time(), f"✖ Erro ao executar ETL: {exc}", "danger", True
+            return _time.time(), f"Erro ao executar ETL: {exc}", "danger", True
 
     from dash import ctx
     @app.callback(

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Executivo | Criptografia Pós-Quântica — Banco Inter</title>
+    <meta name="description" content="Relatório executivo da estratégia de transição para Criptografia Pós-Quântica no Banco Inter. Análise de risco, algoritmos, performance e roadmap de implementação.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/ExecutiveSummary.css">
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="container nav-inner">
+            <a href="#hero" class="logo">
+                <img src="assets/logo.jpg" alt="Banco Inter" class="inter-logo-small">
+                <span class="brand-pqc">PQC Strategy</span>
+            </a>
+            <div class="nav-links">
+                <a href="#contexto">Contexto</a>
+                <a href="#risco">Risco</a>
+                <a href="#algoritmos">Algoritmos</a>
+                <a href="#performance">Performance</a>
+                <a href="#estrategia">Estratégia</a>
+                <a href="#insights">Conclusões</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="/" class="btn btn-primary btn-sm nav-cta">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content" data-reveal="up">
+                    <div class="hero-logos">
+                        <img src="assets/logo.jpg" alt="Banco Inter" class="hero-logo">
+                        <img src="assets/logo-puc.png" alt="PUC Minas" class="hero-logo hero-logo-puc">
+                    </div>
+                    <span class="eyebrow">Projeto de Extensão · PUC Minas 2025</span>
+                    <h1>Segurança e Resiliência<br><span class="accent-text">na Era Pós-Quântica</span></h1>
+                    <p class="hero-sub">Relatório executivo da análise de performance e da estratégia de transição criptográfica para o Banco Inter — comparando algoritmos clássicos, híbridos e PQC sob metodologia científica.</p>
+                    <div class="hero-chips">
+                        <span class="chip"><i data-lucide="cpu"></i> 6 Algoritmos avaliados</span>
+                        <span class="chip"><i data-lucide="cloud"></i> Cloud + Local</span>
+                        <span class="chip"><i data-lucide="shield-check"></i> NIST 2024</span>
+                        <span class="chip"><i data-lucide="activity"></i> Latência &lt; 10ms</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTEXTO -->
+        <section id="contexto" class="section alternate">
+            <div class="container">
+                <div class="two-col-layout">
+                    <div data-reveal="right">
+                        <span class="section-tag">Contexto</span>
+                        <h2>Por que a criptografia atual não é mais suficiente?</h2>
+                        <p class="body-text">Os algoritmos criptográficos que protegem o sistema financeiro global — RSA, ECDSA e Diffie-Hellman — baseiam-se na dificuldade computacional de fatorar grandes números primos. Um computador quântico suficientemente poderoso, utilizando o <strong>Algoritmo de Shor</strong>, resolve esse problema em tempo polinomial, tornando vulnerável toda a infraestrutura atual.</p>
+                        <p class="body-text">O NIST publicou em 2024 os primeiros padrões de <strong>Criptografia Pós-Quântica (PQC)</strong>: ML-KEM (CRYSTALS-Kyber) para troca de chaves e ML-DSA (CRYSTALS-Dilithium) para assinaturas digitais. Este projeto avalia a viabilidade prática desses padrões no Banco Inter.</p>
+                        <div class="context-pills">
+                            <div class="context-pill">
+                                <i data-lucide="calendar-days"></i>
+                                <div>
+                                    <strong>2025–2030</strong>
+                                    <span>Janela crítica de transição</span>
+                                </div>
+                            </div>
+                            <div class="context-pill">
+                                <i data-lucide="trending-up"></i>
+                                <div>
+                                    <strong>Q-Day</strong>
+                                    <span>Chegada estimada de computadores quânticos críticos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="context-visual" data-reveal="fade">
+                        <div class="comparison-table-card">
+                            <div class="comp-header">Algoritmo de Shor vs. Criptografia Clássica</div>
+                            <table class="comp-table">
+                                <thead>
+                                    <tr><th>Algoritmo</th><th>Clássico</th><th>Quântico</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>RSA-2048</td>
+                                        <td>10<sup>12</sup> anos</td>
+                                        <td>~horas</td>
+                                        <td><span class="status-chip danger">Vulnerável</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ECDSA-P256</td>
+                                        <td>10<sup>18</sup> anos</td>
+                                        <td>~horas</td>
+                                        <td><span class="status-chip danger">Vulnerável</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ML-KEM-512</td>
+                                        <td>Seguro</td>
+                                        <td>Seguro</td>
+                                        <td><span class="status-chip success">PQC NIST</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>ML-DSA-44</td>
+                                        <td>Seguro</td>
+                                        <td>Seguro</td>
+                                        <td><span class="status-chip success">PQC NIST</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RISCO -->
+        <section id="risco" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal="left">
+                    <span class="section-tag danger-tag">Análise de Risco</span>
+                    <h2>Risco estratégico para o Banco Inter</h2>
+                    <p>Quatro vetores de ameaça que exigem ação imediata e planejada.</p>
+                </div>
+                <div class="risk-grid">
+                    <div class="risk-card" data-reveal="up">
+                        <div class="icon-wrap"><i data-lucide="eye"></i></div>
+                        <h3>Collect Now, Decrypt Later</h3>
+                        <p>Atores mal-intencionados coletam e armazenam hoje dados cifrados — transações PIX, contratos, senhas — para descriptografá-los no futuro com computadores quânticos. <strong>Dados coletados hoje já estão em risco.</strong></p>
+                        <div class="risk-level high">Risco: Crítico</div>
+                    </div>
+                    <div class="risk-card" data-reveal="up" data-delay="100">
+                        <div class="icon-wrap"><i data-lucide="zap"></i></div>
+                        <h3>Infraestrutura PIX</h3>
+                        <p>O PIX processa mais de 150 milhões de transações diárias usando TLS com ECDSA. A ausência de PQC representa vulnerabilidade sistêmica ao sistema financeiro nacional, com impacto direto no BACEN.</p>
+                        <div class="risk-level high">Risco: Alto</div>
+                    </div>
+                    <div class="risk-card" data-reveal="up" data-delay="200">
+                        <div class="icon-wrap"><i data-lucide="file-check-2"></i></div>
+                        <h3>Conformidade Regulatória</h3>
+                        <p>SOx, BACEN (Res. 4.658) e os requisitos Nasdaq de ciber-resiliência exigirão progressivamente comprovação de cripto-agilidade. A não-adoção pode resultar em sanções e bloqueio de operações internacionais.</p>
+                        <div class="risk-level medium">Risco: Médio-Alto</div>
+                    </div>
+                    <div class="risk-card" data-reveal="up" data-delay="300">
+                        <div class="icon-wrap"><i data-lucide="key-round"></i></div>
+                        <h3>Cadeia de Suprimentos Digital</h3>
+                        <p>APIs de terceiros, parceiros Open Finance e integrações B3 utilizam criptografia clássica. Um único elo vulnerável compromete toda a cadeia de segurança do banco.</p>
+                        <div class="risk-level medium">Risco: Médio</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALGORITMOS -->
+        <section id="algoritmos" class="section alternate">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <span class="section-tag">Análise Técnica</span>
+                    <h2>Algoritmos avaliados no benchmark</h2>
+                    <p>Seis algoritmos comparados em operações funcionalmente equivalentes sob ambientes cloud e local.</p>
+                </div>
+                <div class="algo-grid">
+                    <div class="algo-card classic" data-reveal="up">
+                        <div class="algo-badge">Clássico</div>
+                        <h3>RSA-2048</h3>
+                        <p>Padrão atual para criptografia assimétrica. Segurança baseada na fatoração de inteiros. Chave pública de 256 bytes. <strong>Vulnerável ao Algoritmo de Shor.</strong></p>
+                        <div class="algo-stats">
+                            <span>Seg. Clássica: 112 bits</span>
+                            <span class="tag-danger">Seg. Quântica: ~0 bits</span>
+                        </div>
+                    </div>
+                    <div class="algo-card classic" data-reveal="up" data-delay="80">
+                        <div class="algo-badge">Clássico</div>
+                        <h3>ECDSA-P256</h3>
+                        <p>Assinatura digital baseada em curvas elípticas. Mais eficiente que RSA em tamanho de chave (32 bytes), mas igualmente vulnerável a ataques quânticos via Algoritmo de Shor.</p>
+                        <div class="algo-stats">
+                            <span>Seg. Clássica: 128 bits</span>
+                            <span class="tag-danger">Seg. Quântica: ~0 bits</span>
+                        </div>
+                    </div>
+                    <div class="algo-card pqc" data-reveal="up" data-delay="160">
+                        <div class="algo-badge pqc-badge">NIST PQC</div>
+                        <h3>ML-KEM-512</h3>
+                        <p>Mecanismo de encapsulamento de chave baseado em redes cristalinas (Kyber). Nível de segurança 1 NIST. Excelente equilíbrio entre velocidade e segurança para chaves de sessão TLS.</p>
+                        <div class="algo-stats">
+                            <span class="tag-success">Seg. Quântica: ~128 bits</span>
+                            <span>Chave: ~800 bytes</span>
+                        </div>
+                    </div>
+                    <div class="algo-card pqc" data-reveal="up" data-delay="240">
+                        <div class="algo-badge pqc-badge">NIST PQC</div>
+                        <h3>ML-KEM-768</h3>
+                        <p>Variante intermediária do Kyber com nível 3 NIST. Recomendado para aplicações que requerem alta confidencialidade de longo prazo — contratos digitais e dados bancários sensíveis.</p>
+                        <div class="algo-stats">
+                            <span class="tag-success">Seg. Quântica: ~192 bits</span>
+                            <span>Chave: ~1.184 bytes</span>
+                        </div>
+                    </div>
+                    <div class="algo-card pqc" data-reveal="up" data-delay="320">
+                        <div class="algo-badge pqc-badge">NIST PQC</div>
+                        <h3>ML-KEM-1024</h3>
+                        <p>Máximo nível de segurança do Kyber (nível 5 NIST). Indicado para ultra-confidencialidade. Overhead de performance superior, porém justificado em operações críticas de compliance.</p>
+                        <div class="algo-stats">
+                            <span class="tag-success">Seg. Quântica: ~256 bits</span>
+                            <span>Chave: ~1.568 bytes</span>
+                        </div>
+                    </div>
+                    <div class="algo-card hybrid" data-reveal="up" data-delay="400">
+                        <div class="algo-badge hybrid-badge">Híbrido</div>
+                        <h3>ML-KEM + ECDSA</h3>
+                        <p>Modelo dual-stack recomendado para a fase de transição. Opera PQC e clássico em paralelo: se um falhar, o outro garante a segurança. Estratégia aprovada pelo NCSC britânico e ANSSI francês.</p>
+                        <div class="algo-stats">
+                            <span class="tag-hybrid">Dupla Proteção</span>
+                            <span>Overhead: ~15–25%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFORMANCE -->
+        <section id="performance" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <span class="section-tag">Resultados do Benchmark</span>
+                    <h2>Análise de Performance</h2>
+                    <p>Dados medidos em ambiente cloud (AWS/GCP) e local. IC 95% calculado sobre 1.000+ iterações por algoritmo.</p>
+                </div>
+
+                <div class="perf-highlight-row" data-reveal="up">
+                    <div class="perf-highlight-card primary">
+                        <i data-lucide="zap"></i>
+                        <div>
+                            <span class="perf-val">ML-KEM-512</span>
+                            <span class="perf-desc">Melhor algoritmo para encapsulamento de chave PIX — menor latência com segurança pós-quântica.</span>
+                        </div>
+                    </div>
+                    <div class="perf-highlight-card">
+                        <i data-lucide="activity"></i>
+                        <div>
+                            <span class="perf-val">&lt; 10ms</span>
+                            <span class="perf-desc">Latência máxima medida para ML-KEM em cloud otimizado, dentro do SLA do PIX.</span>
+                        </div>
+                    </div>
+                    <div class="perf-highlight-card">
+                        <i data-lucide="shield-check"></i>
+                        <div>
+                            <span class="perf-val">99.9%</span>
+                            <span class="perf-desc">Integridade nas trilhas de auditoria imutáveis (hash chains) com ML-DSA.</span>
+                        </div>
+                    </div>
+                    <div class="perf-highlight-card">
+                        <i data-lucide="arrow-up-right"></i>
+                        <div>
+                            <span class="perf-val">HTTP/3</span>
+                            <span class="perf-desc">Protocolo essencial para mitigar o overhead de chaves maiores do PQC via QUIC multiplexing.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="perf-table-card" data-reveal="up">
+                    <div class="perf-table-header">
+                        <h3>Comparativo de latência por operação</h3>
+                        <span class="live-indicator"><span class="dot"></span> Dados do Dashboard</span>
+                    </div>
+                    <div class="table-overflow">
+                        <table class="perf-table">
+                            <thead>
+                                <tr>
+                                    <th>Algoritmo</th>
+                                    <th>Operação</th>
+                                    <th>Latência Cloud</th>
+                                    <th>Latência Local</th>
+                                    <th>Seg. Quântica</th>
+                                    <th>Recomendação</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-pqc">
+                                    <td><strong>ML-KEM-512</strong></td>
+                                    <td>Encapsulamento</td>
+                                    <td class="perf-good">~2–4 ms</td>
+                                    <td class="perf-good">~0.3 ms</td>
+                                    <td><span class="status-chip success">128 bits</span></td>
+                                    <td><span class="status-chip success">PIX / TLS</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>ML-KEM-768</strong></td>
+                                    <td>Encapsulamento</td>
+                                    <td class="perf-ok">~3–6 ms</td>
+                                    <td class="perf-good">~0.5 ms</td>
+                                    <td><span class="status-chip success">192 bits</span></td>
+                                    <td><span class="status-chip warning">Contratos</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>ML-KEM-1024</strong></td>
+                                    <td>Encapsulamento</td>
+                                    <td class="perf-ok">~5–9 ms</td>
+                                    <td class="perf-ok">~0.8 ms</td>
+                                    <td><span class="status-chip success">256 bits</span></td>
+                                    <td><span class="status-chip">Compliance</span></td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>RSA-2048</strong></td>
+                                    <td>Encrypt/Sign</td>
+                                    <td class="perf-bad">~15–30 ms</td>
+                                    <td class="perf-ok">~2 ms</td>
+                                    <td><span class="status-chip danger">Vulnerável</span></td>
+                                    <td><span class="status-chip danger">Deprecar</span></td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>ECDSA-P256</strong></td>
+                                    <td>Sign/Verify</td>
+                                    <td class="perf-ok">~3–7 ms</td>
+                                    <td class="perf-good">~0.2 ms</td>
+                                    <td><span class="status-chip danger">Vulnerável</span></td>
+                                    <td><span class="status-chip warning">Fase Híbrida</span></td>
+                                </tr>
+                                <tr class="row-hybrid">
+                                    <td><strong>ML-KEM + ECDSA</strong></td>
+                                    <td>Híbrido</td>
+                                    <td class="perf-ok">~6–12 ms</td>
+                                    <td class="perf-ok">~1 ms</td>
+                                    <td><span class="status-chip success">256 bits</span></td>
+                                    <td><span class="status-chip success">Transição</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-note">Valores representativos baseados nos benchmarks coletados. Consulte o dashboard para dados completos com IC 95%.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTRATÉGIA -->
+        <section id="estrategia" class="section alternate">
+            <div class="container">
+                <div class="strategy-layout">
+                    <div class="strategy-content" data-reveal="right">
+                        <span class="section-tag">Arquitetura</span>
+                        <h2>Modelo de transição híbrido</h2>
+                        <p class="body-text">A estratégia recomendada não é uma substituição abrupta, mas uma coexistência inteligente entre criptografia clássica e PQC — protegendo dados no presente enquanto se constrói a infraestrutura do futuro.</p>
+                        <ul class="feature-list">
+                            <li>
+                                <div class="list-icon"><i data-lucide="layers"></i></div>
+                                <div>
+                                    <strong>Dual-Stack Cryptography</strong>
+                                    <p>ML-KEM + ECDSA operando em paralelo. Se o algoritmo PQC apresentar vulnerabilidade, o clássico mantém a segurança — e vice-versa. Fallback automático sem interrupção de serviço.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-icon"><i data-lucide="gauge"></i></div>
+                                <div>
+                                    <strong>KPI de performance validado</strong>
+                                    <p>Latência inferior a 10ms para ML-KEM-512 em cloud, confirmando compatibilidade com o SLA do PIX (D+0) sem impacto na experiência do cliente final.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-icon"><i data-lucide="database"></i></div>
+                                <div>
+                                    <strong>Data Adapter &amp; cripto-agilidade</strong>
+                                    <p>Camada de abstração criptográfica que permite trocar algoritmos sem reescrever aplicações. Fundamental para acompanhar futuros padrões do NIST sem grandes refatorações.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-icon"><i data-lucide="lock"></i></div>
+                                <div>
+                                    <strong>Trilhas de auditoria ML-DSA</strong>
+                                    <p>Hash chains com assinatura ML-DSA garantem irretratabilidade das transações. Conformidade com SOx e BACEN sem overhead operacional significativo.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="strategy-visual" data-reveal="fade">
+                        <div class="arch-diagram">
+                            <div class="arch-layer top-layer">
+                                <div class="arch-box app-box">Aplicação PIX / Open Finance</div>
+                            </div>
+                            <div class="arch-arrow"><i data-lucide="arrow-down"></i></div>
+                            <div class="arch-layer mid-layer">
+                                <div class="arch-box adapter-box">
+                                    <strong>Crypto Adapter</strong>
+                                    <small>Cripto-Agilidade</small>
+                                </div>
+                            </div>
+                            <div class="arch-arrow"><i data-lucide="arrow-down"></i></div>
+                            <div class="arch-layer dual-layer">
+                                <div class="arch-box pqc-box">
+                                    <strong>ML-KEM</strong>
+                                    <small>PQC Primary</small>
+                                </div>
+                                <div class="arch-plus"><i data-lucide="plus"></i></div>
+                                <div class="arch-box classic-box">
+                                    <strong>ECDSA</strong>
+                                    <small>Classic Fallback</small>
+                                </div>
+                            </div>
+                            <div class="arch-arrow"><i data-lucide="arrow-down"></i></div>
+                            <div class="arch-layer bot-layer">
+                                <div class="arch-box audit-box">
+                                    <strong>ML-DSA Audit Chain</strong>
+                                    <small>SOx / BACEN Compliant</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INSIGHTS -->
+        <section id="insights" class="section">
+            <div class="container">
+                <div class="section-header" data-reveal="up">
+                    <div class="live-indicator"><span class="dot"></span> Sincronizado com o Dashboard</div>
+                    <h2>Conclusões do benchmark</h2>
+                    <p>Principais achados científicos extraídos da análise comparativa de 1.000+ iterações por algoritmo.</p>
+                </div>
+
+                <div class="insight-stats">
+                    <div class="stat-item" data-reveal="up">
+                        <span class="stat-value">ML-KEM</span>
+                        <span class="stat-label">Padrão recomendado</span>
+                        <p>Melhor custo-benefício entre segurança pós-quântica, tamanho de chave e velocidade de encapsulamento para chaves de sessão TLS no PIX.</p>
+                    </div>
+                    <div class="stat-item" data-reveal="up" data-delay="100">
+                        <span class="stat-value">3–5×</span>
+                        <span class="stat-label">RSA vs ML-KEM</span>
+                        <p>ML-KEM-512 é até 5 vezes mais rápido que RSA-2048 em operações de encapsulamento em ambiente cloud, com segurança quântica superior.</p>
+                    </div>
+                    <div class="stat-item" data-reveal="up" data-delay="200">
+                        <span class="stat-value">HTTP/3</span>
+                        <span class="stat-label">Protocolo essencial</span>
+                        <p>QUIC + HTTP/3 mitiga o overhead do tamanho das chaves PQC via multiplexação sem head-of-line blocking, crítico para a viabilidade operacional.</p>
+                    </div>
+                </div>
+
+                <div class="findings-grid" data-reveal="up">
+                    <div class="finding-card">
+                        <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
+                        <h4>PQC é viável operacionalmente</h4>
+                        <p>ML-KEM-512 e ML-DSA-44 operam dentro dos limites de SLA do PIX sem exigir upgrades de infraestrutura hardware.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
+                        <h4>Modo híbrido é a estratégia mais segura</h4>
+                        <p>Durante a transição, operar PQC + clássico em paralelo elimina o risco de vulnerabilidades desconhecidas em algoritmos novos.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
+                        <h4>Cloud amplifica o overhead do PQC</h4>
+                        <p>Em ambientes cloud, a latência de rede domina sobre o overhead computacional do PQC, reforçando a necessidade de HTTP/3 e CDN-edge.</p>
+                    </div>
+                    <div class="finding-card">
+                        <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
+                        <h4>Cripto-agilidade é obrigatória</h4>
+                        <p>O NIST continuará evoluindo os padrões PQC. Arquitetura com camada de abstração criptográfica é indispensável para longevidade.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROADMAP -->
+        <section id="roadmap" class="section alternate">
+            <div class="container">
+                <div class="section-header" data-reveal="left">
+                    <span class="section-tag">Plano de Ação</span>
+                    <h2>Roadmap de implementação</h2>
+                    <p>Plano faseado em 3 etapas para migração segura e progressiva ao PQC.</p>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item" data-reveal="up">
+                        <div class="time">Fase 1 · 0–6 meses</div>
+                        <div class="content">
+                            <h3>Projeto Piloto — Ecossistema PIX</h3>
+                            <p>Implantação de ML-KEM-512 em sandbox controlado para encapsulamento de chaves de sessão TLS no fluxo PIX. Métricas de latência e integridade monitoradas 24/7. Validação em parceria com o BACEN.</p>
+                            <div class="timeline-tags">
+                                <span>ML-KEM-512</span><span>TLS 1.3</span><span>Sandbox PIX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-reveal="up">
+                        <div class="time">Fase 2 · 6–18 meses</div>
+                        <div class="content">
+                            <h3>Expansão Híbrida — Microserviços e Auditoria</h3>
+                            <p>Rollout do modelo dual-stack para microserviços críticos. Implementação de hash chains com ML-DSA para trilhas de auditoria SOx. Migração das APIs Open Finance para HTTP/3 com suporte PQC.</p>
+                            <div class="timeline-tags">
+                                <span>ML-DSA-44</span><span>HTTP/3</span><span>Open Finance</span><span>SOx</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-reveal="up">
+                        <div class="time">Fase 3 · 18–36 meses</div>
+                        <div class="content">
+                            <h3>Consolidação PQC-First</h3>
+                            <p>PQC como padrão primário em toda a infraestrutura. Depreciação gradual de RSA-2048. Cripto-agilidade total com Data Adapter para acompanhar a evolução do NIST. Certificação de conformidade PQC.</p>
+                            <div class="timeline-tags">
+                                <span>PQC-First</span><span>Cripto-Agilidade</span><span>Nasdaq Compliance</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="site-footer">
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-brand-row">
+                    <div class="footer-logos">
+                        <img src="assets/logo.jpg" alt="Inter" class="footer-logo">
+                        <img src="assets/logo-puc.png" alt="PUC Minas" class="footer-logo footer-logo-puc">
+                    </div>
+                    <div class="footer-brand-copy">
+                        <strong>Criptografia Pós-Quântica na Prática</strong>
+                        <span>Projeto de Extensão · PUC Minas &amp; Banco Inter · 2025</span>
+                    </div>
+                    <a href="/" class="btn btn-primary btn-sm footer-dash-btn">
+                        <i data-lucide="layout-dashboard"></i>
+                        <span>Acessar Dashboard</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-team">
+            <div class="container">
+                <div class="footer-team-inner">
+                    <div class="footer-section-label">Equipe do Projeto</div>
+                    <div class="footer-members">
+                        <div class="footer-member">
+                            <div class="member-avatar">JB</div>
+                            <div class="member-info">
+                                <strong>Joseph Bessa Pereira da Costa</strong>
+                                <span>Desenvolvimento &amp; Análise</span>
+                            </div>
+                        </div>
+                        <div class="footer-member">
+                            <div class="member-avatar">LI</div>
+                            <div class="member-info">
+                                <strong>Lucas Israel França Gontijo</strong>
+                                <span>Desenvolvimento &amp; Análise</span>
+                            </div>
+                        </div>
+                        <div class="footer-member">
+                            <div class="member-avatar">LO</div>
+                            <div class="member-info">
+                                <strong>Lucas Oue</strong>
+                                <span>Desenvolvimento &amp; Análise</span>
+                            </div>
+                        </div>
+                        <div class="footer-member">
+                            <div class="member-avatar">MM</div>
+                            <div class="member-info">
+                                <strong>Marcos Martins dos Santos</strong>
+                                <span>Desenvolvimento &amp; Análise</span>
+                            </div>
+                        </div>
+                        <div class="footer-member">
+                            <div class="member-avatar">MR</div>
+                            <div class="member-info">
+                                <strong>Matheus Rodrigues Bon</strong>
+                                <span>Desenvolvimento &amp; Análise</span>
+                            </div>
+                        </div>
+                        <div class="footer-member">
+                            <div class="member-avatar">YG</div>
+                            <div class="member-info">
+                                <strong>Yuri Geovane Martiniano dos Santos</strong>
+                                <span>Desenvolvimento &amp; Análise</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-advisor">
+                        <div class="advisor-label">Orientação Acadêmica</div>
+                        <div class="footer-member advisor-member">
+                            <div class="member-avatar advisor-avatar">MH</div>
+                            <div class="member-info">
+                                <strong>Prof.ª Michelle Hanne Soares de Andrade</strong>
+                                <span>Professora Orientadora · PUC Minas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Banco Inter &amp; PUC Minas · Projeto de Extensão em Criptografia Pós-Quântica</p>
+                <p class="footer-disclaimer">Relatório de uso acadêmico. Não constitui recomendação de investimento ou orientação regulatória oficial.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>lucide.createIcons();</script>
+    <script src="assets/ExecutiveSummary.js"></script>
+</body>
+</html>
