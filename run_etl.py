@@ -27,10 +27,10 @@ def main() -> None:
     result = run_full_etl()
     print()
     if result["status"] == "ok":
-        print(f"  ✔ {result['message']}")
+        print(f"  [OK] {result['message']}")
         sys.exit(0)
     else:
-        print(f"  ✖ ERRO: {result['message']}")
+        print(f"  [ERRO] {result['message']}")
         sys.exit(1)
 
 

@@ -3,10 +3,13 @@ import logging
 import os
 import dash_bootstrap_components as dbc
 from dash import Dash
+from flask import send_from_directory
 from core.callbacks import register_callbacks
 from core.dashboard_payload import build_dashboard_payload
 from core.data import LOGO_ASSET_NAME, get_dataframe
 from core.layout import build_layout
+
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
@@ -33,6 +36,11 @@ def create_app() -> Dash:
 try:
     app = create_app()
     server = app.server
+
+    @server.route("/resumo")
+    def executive_summary():
+        return send_from_directory(_BASE_DIR, "ExecutiveSummary.html")
+
 except Exception as exc:
     logger.error("Erro ao inicializar aplicacao: %s", exc, exc_info=True)
     raise

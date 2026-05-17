@@ -1061,3 +1061,115 @@ body {
 .admin-source-info {
     padding: 4px 0;
 }
+
+
+/* =========================================================
+   Dashboard Footer — Team Strip
+   ========================================================= */
+.dashboard-footer {
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+.footer-team-strip {
+    background: #FFFFFF;
+    border: 1px solid #E8ECF0;
+    border-radius: 14px;
+    padding: 1.25rem 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-strip-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8E9299;
+    margin-right: 0.5rem;
+    white-space: nowrap;
+}
+
+.footer-members-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.footer-member-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: #F5F7FA;
+    border: 1px solid #E8ECF0;
+    border-radius: 99px;
+    padding: 4px 12px 4px 5px;
+    transition: border-color 0.2s;
+}
+.footer-member-chip:hover { border-color: #FF7A00; }
+
+.chip-avatar {
+    width: 26px;
+    height: 26px;
+    background: linear-gradient(135deg, #FF7A00, #E66E00);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    min-width: 26px;
+}
+
+.chip-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #010326;
+    white-space: nowrap;
+}
+
+.footer-advisor-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 122, 0, 0.07);
+    border: 1px solid rgba(255, 122, 0, 0.25);
+    border-radius: 10px;
+    padding: 6px 14px 6px 7px;
+}
+
+.chip-avatar-advisor {
+    width: 32px;
+    height: 32px;
+    font-size: 0.72rem;
+    min-width: 32px;
+}
+
+.chip-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.chip-role {
+    font-size: 0.65rem;
+    color: #FF7A00;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.footer-summary-link {
+    margin-left: auto;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #FF7A00;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+.footer-summary-link:hover { color: #E66E00; }
