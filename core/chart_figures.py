@@ -11,11 +11,11 @@ from core.colors import COLORS, CATEGORY_COLORS, build_environment_color_map, bu
 
 _GRID_COLOR = "rgba(0,0,0,0.06)"
 _ERROR_COLOR = "rgba(0,0,0,0.35)"
-_MEAN_AXIS_TITLE = "Latencia media (ms)"
+_MEAN_AXIS_TITLE = "Latência média (ms)"
 _ANNOTATION_FONT = {"size": 9, "color": COLORS["muted"]}
 
 _SECURITY_PALETTE = {
-    "Classico": "#010326",
+    "Clássico": "#010326",
     "L1": "#FFB873",
     "L2": "#FF8C1A",
     "L3": "#FF7A00",
@@ -89,7 +89,7 @@ def fig_kem_ranking(dff: pd.DataFrame) -> go.Figure:
             customdata=np.column_stack([summary["median_ms"], summary["n"], summary["ci95"]]),
             hovertemplate=(
                 "<b>%{y}</b><br>"
-                "Media: %{x:.4f} ms<br>"
+                "Média: %{x:.4f} ms<br>"
                 "Mediana: %{customdata[0]:.4f} ms<br>"
                 "IC95: +/- %{customdata[2]:.4f} ms<br>"
                 "n = %{customdata[1]:.0f}<extra></extra>"
@@ -117,7 +117,7 @@ def fig_kem_ranking(dff: pd.DataFrame) -> go.Figure:
         showlegend=False,
     )
     fig.update_xaxes(
-        title="Latencia media de encapsulamento (ms)",
+        title="Latência média de encapsulamento (ms)",
         showgrid=True,
         gridwidth=0.5,
         gridcolor=_GRID_COLOR,
@@ -143,7 +143,7 @@ def fig_kem_ranking(dff: pd.DataFrame) -> go.Figure:
 
 def fig_security_vs_speed(dff: pd.DataFrame) -> go.Figure:
     if dff.empty or "security_level" not in dff.columns:
-        return empty_figure("Dados de nivel de seguranca indisponiveis")
+        return empty_figure("Dados de nível de segurança indisponíveis")
 
     df = dff.copy()
     if "key_size_bytes" not in df.columns:
@@ -156,9 +156,9 @@ def fig_security_vs_speed(dff: pd.DataFrame) -> go.Figure:
     )
 
     if summary.empty:
-        return empty_figure("Sem niveis de seguranca NIST validos para os filtros atuais")
+        return empty_figure("Sem níveis de segurança NIST válidos para os filtros atuais")
 
-    level_map = {"Classico": 0, "L1": 1, "L2": 2, "L3": 3, "L5": 5}
+    level_map = {"Clássico": 0, "L1": 1, "L2": 2, "L3": 3, "L5": 5}
     summary = summary[summary["security_level"].isin(level_map.keys())]
     summary["x_level"] = summary["security_level"].map(level_map)
 
@@ -179,20 +179,20 @@ def fig_security_vs_speed(dff: pd.DataFrame) -> go.Figure:
                 mode="markers",
                 marker={"size": marker_size, "color": color, "opacity": 0.8, "line": {"width": 1, "color": "white"}},
                 name=lib,
-                hovertemplate=(f"<b>{lib}</b><br>Seg: {row['security_level']}<br>Latencia: {y:.3f} ms<br>Key size: {size} B<br>n={int(row['n'])}<extra></extra>"),
+                hovertemplate=(f"<b>{lib}</b><br>Seg: {row['security_level']}<br>Latência: {y:.3f} ms<br>Key size: {size} B<br>n={int(row['n'])}<extra></extra>"),
             )
         )
 
     fig = base_layout(fig)
     fig.update_layout(
         height=520,
-        xaxis=dict(title="Nivel de seguranca", tickmode="array", tickvals=[0, 1, 2, 3, 5], ticktext=["Classico", "L1", "L2", "L3", "L5"], automargin=True),
+        xaxis=dict(title="Nível de segurança", tickmode="array", tickvals=[0, 1, 2, 3, 5], ticktext=["Clássico", "L1", "L2", "L3", "L5"], automargin=True),
         yaxis=dict(title=_MEAN_AXIS_TITLE, type="linear", showgrid=True, gridcolor=_GRID_COLOR, automargin=True),
         showlegend=False,
         margin={"l": 40, "r": 20, "t": 40, "b": 80},
     )
 
-    fig.add_annotation(text="Bolhas: tamanho de chave. Eixo X: nivel NIST.", xref="paper", yref="paper", x=0.5, y=-0.20, showarrow=False, font=_ANNOTATION_FONT)
+    fig.add_annotation(text="Bolhas: tamanho de chave. Eixo X: nível NIST.", xref="paper", yref="paper", x=0.5, y=-0.20, showarrow=False, font=_ANNOTATION_FONT)
     return fig
 
 
@@ -215,7 +215,7 @@ def fig_signature_comparison(dff: pd.DataFrame) -> go.Figure:
                 textposition="outside",
                 name="ML-DSA (Rápido)",
                 marker={"color": "#FF7A00", "line": {"color": "white", "width": 1}},
-                hovertemplate="<b>%{x}</b><br>Media: %{y:.3f} ms<extra></extra>",
+                hovertemplate="<b>%{x}</b><br>Média: %{y:.3f} ms<extra></extra>",
             )
         )
 
@@ -228,7 +228,7 @@ def fig_signature_comparison(dff: pd.DataFrame) -> go.Figure:
                 textposition="outside",
                 name="SLH-DSA (Lento)",
                 marker={"color": "#010326", "line": {"color": "white", "width": 1}},
-                hovertemplate="<b>%{x}</b><br>Media: %{y:.3f} ms<extra></extra>",
+                hovertemplate="<b>%{x}</b><br>Média: %{y:.3f} ms<extra></extra>",
             )
         )
 
@@ -310,7 +310,7 @@ def _fig_latency_by_env_type(dff: pd.DataFrame, env_type: str, title_y: str, ann
                 boxpoints="all",
                 marker={"size": 3, "opacity": 0.32},
                 orientation="h",
-                hovertemplate="Algoritmo: %{y}<br>Latencia: %{x:.4f} ms<extra></extra>",
+                hovertemplate="Algoritmo: %{y}<br>Latência: %{x:.4f} ms<extra></extra>",
             )
         )
 
@@ -321,7 +321,7 @@ def _fig_latency_by_env_type(dff: pd.DataFrame, env_type: str, title_y: str, ann
         margin={"l": 210, "r": 40, "t": 60, "b": 90},
         showlegend=False,
     )
-    fig.update_xaxes(title="Latencia (ms)", showgrid=True, gridwidth=0.5, gridcolor=_GRID_COLOR, automargin=True)
+    fig.update_xaxes(title="Latência (ms)", showgrid=True, gridwidth=0.5, gridcolor=_GRID_COLOR, automargin=True)
     fig.update_yaxes(title="Algoritmo", categoryorder="array", categoryarray=algorithm_order, showgrid=False, automargin=True)
     fig.add_annotation(
         text=annotation_text,

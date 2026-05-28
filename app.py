@@ -30,7 +30,7 @@ def create_app() -> Dash:
     app.layout = build_layout(app, dataframe, LOGO_ASSET_NAME, initial_payload=initial_payload)
     register_callbacks(app)
 
-    logger.info("Aplicacao inicializada com sucesso")
+    logger.info("Aplicação inicializada com sucesso")
     return app
 
 try:
@@ -42,7 +42,7 @@ try:
         return send_from_directory(_BASE_DIR, "ExecutiveSummary.html")
 
 except Exception as exc:
-    logger.error("Erro ao inicializar aplicacao: %s", exc, exc_info=True)
+    logger.error("Erro ao inicializar aplicação: %s", exc, exc_info=True)
     raise
 
 if __name__ == "__main__":
