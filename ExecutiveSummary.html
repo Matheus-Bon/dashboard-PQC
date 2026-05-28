@@ -23,7 +23,7 @@
                 <a href="#algoritmos">Algoritmos</a>
                 <a href="#performance">Performance</a>
                 <a href="#estrategia">Estratégia</a>
-                <a href="#insights">Conclusões</a>
+                <a href="#insights">Algoritmos</a>
                 <a href="#roadmap">Roadmap</a>
                 <a href="/" class="btn btn-primary btn-sm nav-cta">
                     <i data-lucide="layout-dashboard"></i>
@@ -229,112 +229,126 @@
         <section id="performance" class="section">
             <div class="container">
                 <div class="section-header" data-reveal="up">
-                    <span class="section-tag">Resultados do Benchmark</span>
-                    <h2>Análise de Performance</h2>
-                    <p>Dados medidos em ambiente cloud (AWS/GCP) e local. IC 95% calculado sobre 1.000+ iterações por algoritmo.</p>
+                    <span class="section-tag">Análise de Implementação</span>
+                    <h2>Análise de Performance por Área</h2>
+                    <p>Mapeamento completo das 9 áreas críticas do Banco Inter com algoritmos NIST recomendados, métodos de integração e requisitos de compliance SOx/BACEN.</p>
                 </div>
 
                 <div class="perf-highlight-row" data-reveal="up">
                     <div class="perf-highlight-card primary">
                         <i data-lucide="zap"></i>
                         <div>
-                            <span class="perf-val">ML-KEM-512</span>
-                            <span class="perf-desc">Melhor algoritmo para encapsulamento de chave PIX — menor latência com segurança pós-quântica.</span>
+                            <span class="perf-val">FFI / CGO</span>
+                            <span class="perf-desc">Hot paths com SLA &lt; 10ms — performance C com segurança de memória Go via liboqs.</span>
                         </div>
                     </div>
                     <div class="perf-highlight-card">
-                        <i data-lucide="activity"></i>
+                        <i data-lucide="box"></i>
                         <div>
-                            <span class="perf-val">&lt; 10ms</span>
-                            <span class="perf-desc">Latência máxima medida para ML-KEM em cloud otimizado, dentro do SLA do PIX.</span>
+                            <span class="perf-val">Microserviço</span>
+                            <span class="perf-desc">Ops administrativas, auditoria e key management — blast radius controlado, essencial para SOx.</span>
                         </div>
                     </div>
                     <div class="perf-highlight-card">
-                        <i data-lucide="shield-check"></i>
+                        <i data-lucide="server"></i>
                         <div>
-                            <span class="perf-val">99.9%</span>
-                            <span class="perf-desc">Integridade nas trilhas de auditoria imutáveis (hash chains) com ML-DSA.</span>
+                            <span class="perf-val">TLS Proxy</span>
+                            <span class="perf-desc">Gateway e service mesh — PQC no edge sem alterar a aplicação. Ideal para legado.</span>
                         </div>
                     </div>
                     <div class="perf-highlight-card">
-                        <i data-lucide="arrow-up-right"></i>
+                        <i data-lucide="shuffle"></i>
                         <div>
-                            <span class="perf-val">HTTP/3</span>
-                            <span class="perf-desc">Protocolo essencial para mitigar o overhead de chaves maiores do PQC via QUIC multiplexing.</span>
+                            <span class="perf-val">Modelo Híbrido</span>
+                            <span class="perf-desc">X25519 + ML-KEM em paralelo até que toda a cadeia de confiança esteja migrada.</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="perf-table-card" data-reveal="up">
                     <div class="perf-table-header">
-                        <h3>Comparativo de latência por operação</h3>
-                        <span class="live-indicator"><span class="dot"></span> Dados do Dashboard</span>
+                        <h3>Matriz de implementação — 9 áreas críticas</h3>
+                        <span class="live-indicator"><span class="dot"></span> Documento de estratégia PQC v1.0</span>
                     </div>
                     <div class="table-overflow">
                         <table class="perf-table">
                             <thead>
                                 <tr>
-                                    <th>Algoritmo</th>
-                                    <th>Operação</th>
-                                    <th>Latência Cloud</th>
-                                    <th>Latência Local</th>
-                                    <th>Seg. Quântica</th>
-                                    <th>Recomendação</th>
+                                    <th>Área</th>
+                                    <th>Componentes-chave</th>
+                                    <th>Método</th>
+                                    <th>Algoritmo Principal</th>
+                                    <th>SOx</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="row-pqc">
-                                    <td><strong>ML-KEM-512</strong></td>
-                                    <td>Encapsulamento</td>
-                                    <td class="perf-good">~2–4 ms</td>
-                                    <td class="perf-good">~0.3 ms</td>
-                                    <td><span class="status-chip success">128 bits</span></td>
-                                    <td><span class="status-chip success">PIX / TLS</span></td>
+                                    <td><strong>IAM / Access Control</strong></td>
+                                    <td>VPN, PAM, Portal Admin, Bastion</td>
+                                    <td>FFI + Microserviço + TLS Proxy</td>
+                                    <td>ML-KEM-768 + ML-DSA-65</td>
+                                    <td><span class="status-chip success">Crítico</span></td>
                                 </tr>
                                 <tr class="row-pqc">
-                                    <td><strong>ML-KEM-768</strong></td>
-                                    <td>Encapsulamento</td>
-                                    <td class="perf-ok">~3–6 ms</td>
-                                    <td class="perf-good">~0.5 ms</td>
-                                    <td><span class="status-chip success">192 bits</span></td>
-                                    <td><span class="status-chip warning">Contratos</span></td>
+                                    <td><strong>PKI / Certificados</strong></td>
+                                    <td>CA Interna PQC, Certs Servidores, mTLS</td>
+                                    <td>Microserviço + TLS Proxy</td>
+                                    <td>SLH-DSA-128s (raiz) + ML-DSA-65</td>
+                                    <td><span class="status-chip success">Sim</span></td>
                                 </tr>
                                 <tr class="row-pqc">
-                                    <td><strong>ML-KEM-1024</strong></td>
-                                    <td>Encapsulamento</td>
-                                    <td class="perf-ok">~5–9 ms</td>
-                                    <td class="perf-ok">~0.8 ms</td>
-                                    <td><span class="status-chip success">256 bits</span></td>
-                                    <td><span class="status-chip">Compliance</span></td>
-                                </tr>
-                                <tr class="row-classic">
-                                    <td><strong>RSA-2048</strong></td>
-                                    <td>Encrypt/Sign</td>
-                                    <td class="perf-bad">~15–30 ms</td>
-                                    <td class="perf-ok">~2 ms</td>
-                                    <td><span class="status-chip danger">Vulnerável</span></td>
-                                    <td><span class="status-chip danger">Deprecar</span></td>
-                                </tr>
-                                <tr class="row-classic">
-                                    <td><strong>ECDSA-P256</strong></td>
-                                    <td>Sign/Verify</td>
-                                    <td class="perf-ok">~3–7 ms</td>
-                                    <td class="perf-good">~0.2 ms</td>
-                                    <td><span class="status-chip danger">Vulnerável</span></td>
-                                    <td><span class="status-chip warning">Fase Híbrida</span></td>
+                                    <td><strong>Key Management (HSM/KMS)</strong></td>
+                                    <td>Key Wrapping, Escrow, HSM Replication, DC/Cloud</td>
+                                    <td>FFI + Microserviço + TLS Proxy</td>
+                                    <td>ML-KEM-768 / ML-KEM-1024</td>
+                                    <td><span class="status-chip success">Sim</span></td>
                                 </tr>
                                 <tr class="row-hybrid">
-                                    <td><strong>ML-KEM + ECDSA</strong></td>
-                                    <td>Híbrido</td>
-                                    <td class="perf-ok">~6–12 ms</td>
-                                    <td class="perf-ok">~1 ms</td>
-                                    <td><span class="status-chip success">256 bits</span></td>
-                                    <td><span class="status-chip success">Transição</span></td>
+                                    <td><strong>Network Security</strong></td>
+                                    <td>APIs Internas, Open Banking, Inter-region, Partners</td>
+                                    <td>FFI + TLS Proxy + Microserviço</td>
+                                    <td>ML-KEM-768 + HTTP/3 (QUIC)</td>
+                                    <td><span class="status-chip warning">Parcial</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>Databases</strong></td>
+                                    <td>Data Keys, Replication Channel, Backup Integrity</td>
+                                    <td>FFI + TLS Proxy + Microserviço</td>
+                                    <td>ML-KEM-768 + ML-DSA-65 / SLH-DSA</td>
+                                    <td><span class="status-chip success">Sim</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>Application Security</strong></td>
+                                    <td>Docs, Tokens, Configs, Approval Workflows</td>
+                                    <td>FFI + Microserviço</td>
+                                    <td>ML-DSA-65 (PASETO v4) / SLH-DSA</td>
+                                    <td><span class="status-chip success">Sim</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>DevOps / CI-CD</strong></td>
+                                    <td>Binários, Docker, Helm, Terraform, Releases</td>
+                                    <td>Microserviço</td>
+                                    <td>ML-DSA-65 (cosign / Notary v2)</td>
+                                    <td><span class="status-chip success">Sim</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>Logging / SIEM</strong></td>
+                                    <td>Audit Trail, PAM Logs, Financial Events, Admin Changes</td>
+                                    <td>Microserviço</td>
+                                    <td>ML-DSA-65 por evento + SLH-DSA-128s diário</td>
+                                    <td><span class="status-chip success">Crítico</span></td>
+                                </tr>
+                                <tr class="row-pqc">
+                                    <td><strong>DR / Backup</strong></td>
+                                    <td>Archives Regulatórios, Backups Frios, Snapshots, Legal Hold</td>
+                                    <td>Microserviço</td>
+                                    <td>ML-KEM-1024 + SLH-DSA-128s</td>
+                                    <td><span class="status-chip success">Sim</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div class="table-note">Valores representativos baseados nos benchmarks coletados. Consulte o dashboard para dados completos com IC 95%.</div>
+                    <div class="table-note">Fonte: Documento de Estratégia PQC — Banco Inter v1.0 (2025). Baseado nos padrões NIST FIPS 203, 204 e 205.</div>
                 </div>
             </div>
         </section>
@@ -346,34 +360,34 @@
                     <div class="strategy-content" data-reveal="right">
                         <span class="section-tag">Arquitetura</span>
                         <h2>Modelo de transição híbrido</h2>
-                        <p class="body-text">A estratégia recomendada não é uma substituição abrupta, mas uma coexistência inteligente entre criptografia clássica e PQC — protegendo dados no presente enquanto se constrói a infraestrutura do futuro.</p>
+                        <p class="body-text">O modelo híbrido combina dois algoritmos em série — se um falhar, o outro ainda protege. Para encapsulamento de chaves: <strong>X25519 + ML-KEM-768</strong>. Para assinaturas: <strong>ECDSA P-384 + ML-DSA-65</strong>. A chave resultante é o hash dos dois materiais combinados (HKDF).</p>
                         <ul class="feature-list">
                             <li>
-                                <div class="list-icon"><i data-lucide="layers"></i></div>
+                                <div class="list-icon"><i data-lucide="cpu"></i></div>
                                 <div>
-                                    <strong>Dual-Stack Cryptography</strong>
-                                    <p>ML-KEM + ECDSA operando em paralelo. Se o algoritmo PQC apresentar vulnerabilidade, o clássico mantém a segurança — e vice-versa. Fallback automático sem interrupção de serviço.</p>
+                                    <strong>FFI/CGO — Hot Paths</strong>
+                                    <p>Implementado no nível do TLS handshake: X25519 gera shared_secret_1, ML-KEM-768 encapsula shared_secret_2, master_key = HKDF(secret_1 ‖ secret_2). Quebrar qualquer um dos dois não compromete a sessão.</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="list-icon"><i data-lucide="gauge"></i></div>
+                                <div class="list-icon"><i data-lucide="box"></i></div>
                                 <div>
-                                    <strong>KPI de performance validado</strong>
-                                    <p>Latência inferior a 10ms para ML-KEM-512 em cloud, confirmando compatibilidade com o SLA do PIX (D+0) sem impacto na experiência do cliente final.</p>
+                                    <strong>Microserviço — Negociação de Protocolo</strong>
+                                    <p>API interna que recebe as capacidades do cliente e retorna o melhor protocolo disponível (preferência: hybrid-X25519-MLKEM768; fallback: X25519). Cada negociação é logada — visibilidade total da transição.</p>
                                 </div>
                             </li>
                             <li>
-                                <div class="list-icon"><i data-lucide="database"></i></div>
+                                <div class="list-icon"><i data-lucide="server"></i></div>
                                 <div>
-                                    <strong>Data Adapter &amp; cripto-agilidade</strong>
-                                    <p>Camada de abstração criptográfica que permite trocar algoritmos sem reescrever aplicações. Fundamental para acompanhar futuros padrões do NIST sem grandes refatorações.</p>
+                                    <strong>TLS Proxy — Gateway (nginx/Envoy)</strong>
+                                    <p>Configuração via cipher suite: <code>ssl_ecdh_curve X25519MLKEM768:X25519</code>. Tenta híbrido primeiro; recua para X25519 se cliente não suporta. Clientes legados continuam sem alteração.</p>
                                 </div>
                             </li>
                             <li>
                                 <div class="list-icon"><i data-lucide="lock"></i></div>
                                 <div>
-                                    <strong>Trilhas de auditoria ML-DSA</strong>
-                                    <p>Hash chains com assinatura ML-DSA garantem irretratabilidade das transações. Conformidade com SOx e BACEN sem overhead operacional significativo.</p>
+                                    <strong>Critério de Saída do Híbrido</strong>
+                                    <p>Modo PQC puro só é ativado quando 100% da cadeia de confiança estiver migrada e verificada — incluindo CA raiz, certificados de todos os serviços e clientes. Nunca fazer big bang.</p>
                                 </div>
                             </li>
                         </ul>
@@ -381,36 +395,94 @@
                     <div class="strategy-visual" data-reveal="fade">
                         <div class="arch-diagram">
                             <div class="arch-layer top-layer">
-                                <div class="arch-box app-box">Aplicação PIX / Open Finance</div>
+                                <div class="arch-box app-box">PIX / Open Finance / APIs</div>
                             </div>
                             <div class="arch-arrow"><i data-lucide="arrow-down"></i></div>
                             <div class="arch-layer mid-layer">
                                 <div class="arch-box adapter-box">
-                                    <strong>Crypto Adapter</strong>
-                                    <small>Cripto-Agilidade</small>
+                                    <strong>TLS Proxy / FFI / Microserviço</strong>
+                                    <small>3 métodos de integração</small>
                                 </div>
                             </div>
                             <div class="arch-arrow"><i data-lucide="arrow-down"></i></div>
                             <div class="arch-layer dual-layer">
                                 <div class="arch-box pqc-box">
-                                    <strong>ML-KEM</strong>
-                                    <small>PQC Primary</small>
+                                    <strong>ML-KEM-768</strong>
+                                    <small>PQC Primary (FIPS 203)</small>
                                 </div>
                                 <div class="arch-plus"><i data-lucide="plus"></i></div>
                                 <div class="arch-box classic-box">
-                                    <strong>ECDSA</strong>
+                                    <strong>X25519</strong>
                                     <small>Classic Fallback</small>
                                 </div>
                             </div>
                             <div class="arch-arrow"><i data-lucide="arrow-down"></i></div>
                             <div class="arch-layer bot-layer">
                                 <div class="arch-box audit-box">
-                                    <strong>ML-DSA Audit Chain</strong>
-                                    <small>SOx / BACEN Compliant</small>
+                                    <strong>ML-DSA-65 Hash Chain</strong>
+                                    <small>SOx / BACEN · Audit Trail imutável</small>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="perf-table-card" data-reveal="up" style="margin-top: 3rem;">
+                    <div class="perf-table-header">
+                        <h3>Tabela de transição por componente</h3>
+                        <span>Fase 1 (Clássico) → Fase 2 (Híbrido) → Fase 3 (PQC puro)</span>
+                    </div>
+                    <div class="table-overflow">
+                        <table class="perf-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Fase 1 — Clássico</th>
+                                    <th>Fase 2 — Híbrido</th>
+                                    <th>Fase 3 — PQC puro</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-classic">
+                                    <td><strong>API Gateway / VPN</strong></td>
+                                    <td>X25519 + ECDSA P-384</td>
+                                    <td class="perf-ok">X25519 + ML-KEM-768 (híbrido TLS)</td>
+                                    <td class="perf-good">ML-KEM-768 puro</td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>Auth / IAM hot path</strong></td>
+                                    <td>RSA-2048 / ECDSA</td>
+                                    <td class="perf-ok">ECDSA + ML-DSA-65 (dupla assinatura)</td>
+                                    <td class="perf-good">ML-DSA-65 puro (PASETO v4)</td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>CA Interna</strong></td>
+                                    <td>CA RSA existente ativa</td>
+                                    <td class="perf-ok">CA PQC paralela para novos serviços</td>
+                                    <td class="perf-good">CA RSA descomissionada</td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>Key Management</strong></td>
+                                    <td>RSA-OAEP para wrapping</td>
+                                    <td class="perf-ok">RSA-OAEP + ML-KEM-768 (ambos geram KEKs)</td>
+                                    <td class="perf-good">ML-KEM-768 puro</td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>Assinatura de Logs (SIEM)</strong></td>
+                                    <td>HMAC-SHA256</td>
+                                    <td class="perf-ok">HMAC-SHA256 + ML-DSA-65 (ambas armazenadas)</td>
+                                    <td class="perf-good">ML-DSA-65 puro + SLH-DSA (longa vida)</td>
+                                </tr>
+                                <tr class="row-classic">
+                                    <td><strong>Backup / Archive</strong></td>
+                                    <td>AES-256 + RSA-OAEP</td>
+                                    <td class="perf-ok">AES-256 + ML-KEM-768 (envelope novo)</td>
+                                    <td class="perf-good">AES-256 + ML-KEM-768 + SLH-DSA</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-note">Todos os componentes usam rollout gradual: 10% → 25% → 50% → 100% com feature flags e possibilidade de rollback em cada etapa.</div>
                 </div>
             </div>
         </section>
@@ -419,49 +491,70 @@
         <section id="insights" class="section">
             <div class="container">
                 <div class="section-header" data-reveal="up">
-                    <div class="live-indicator"><span class="dot"></span> Sincronizado com o Dashboard</div>
-                    <h2>Conclusões do benchmark</h2>
-                    <p>Principais achados científicos extraídos da análise comparativa de 1.000+ iterações por algoritmo.</p>
+                    <div class="live-indicator"><span class="dot"></span> Padrões NIST FIPS 203 · 204 · 205</div>
+                    <h2>Guia Rápido — Quando Usar Cada Algoritmo</h2>
+                    <p>Referência técnica para seleção do algoritmo correto em cada contexto do Banco Inter, conforme o documento de estratégia PQC v1.0.</p>
                 </div>
 
-                <div class="insight-stats">
-                    <div class="stat-item" data-reveal="up">
-                        <span class="stat-value">ML-KEM</span>
-                        <span class="stat-label">Padrão recomendado</span>
-                        <p>Melhor custo-benefício entre segurança pós-quântica, tamanho de chave e velocidade de encapsulamento para chaves de sessão TLS no PIX.</p>
+                <div class="algo-grid" data-reveal="up">
+                    <div class="algo-card pqc">
+                        <div class="algo-badge pqc-badge">FIPS 203</div>
+                        <h3>ML-KEM-768</h3>
+                        <p>Encapsulamento de chaves — padrão principal do Banco Inter. Hot paths: Auth, PIX, Key Wrapping, API Gateway TLS, mTLS. Use via FFI/CGO → liboqs. <strong>Substitui RSA-OAEP e ECDH.</strong></p>
+                        <div class="algo-stats">
+                            <span class="tag-success">Seg. Quântica: ~192 bits</span>
+                            <span>SLA &lt; 10ms (hot path)</span>
+                        </div>
                     </div>
-                    <div class="stat-item" data-reveal="up" data-delay="100">
-                        <span class="stat-value">3–5×</span>
-                        <span class="stat-label">RSA vs ML-KEM</span>
-                        <p>ML-KEM-512 é até 5 vezes mais rápido que RSA-2048 em operações de encapsulamento em ambiente cloud, com segurança quântica superior.</p>
+                    <div class="algo-card pqc" data-delay="80">
+                        <div class="algo-badge pqc-badge">FIPS 203</div>
+                        <h3>ML-KEM-1024</h3>
+                        <p>KEM de máxima segurança. DC/Cloud key exchange, Legal Hold, Archives regulatórios com retenção de 10 anos. Latência aceita overhead de +30% — margem de segurança justifica.</p>
+                        <div class="algo-stats">
+                            <span class="tag-success">Seg. Quântica: ~256 bits</span>
+                            <span>Overhead: +30% vs KEM-768</span>
+                        </div>
                     </div>
-                    <div class="stat-item" data-reveal="up" data-delay="200">
-                        <span class="stat-value">HTTP/3</span>
-                        <span class="stat-label">Protocolo essencial</span>
-                        <p>QUIC + HTTP/3 mitiga o overhead do tamanho das chaves PQC via multiplexação sem head-of-line blocking, crítico para a viabilidade operacional.</p>
+                    <div class="algo-card pqc" data-delay="160">
+                        <div class="algo-badge pqc-badge">FIPS 204</div>
+                        <h3>ML-DSA-65</h3>
+                        <p>Assinatura digital — algoritmo universal do Banco Inter. PIX, tokens PASETO v4, docs internos, CI/CD, logs SIEM, aprovações de workflow. <strong>Substitui ECDSA e RSA-PSS.</strong></p>
+                        <div class="algo-stats">
+                            <span class="tag-success">Seg. Quântica: ~192 bits</span>
+                            <span>Uso universal de assinaturas</span>
+                        </div>
+                    </div>
+                    <div class="algo-card hybrid" data-delay="240">
+                        <div class="algo-badge hybrid-badge">FIPS 205</div>
+                        <h3>SLH-DSA-128s</h3>
+                        <p>Assinatura de longa vida (hash-based). CA raiz, archives regulatórios (&gt;5 anos), logs privilegiados mensais, legal hold. Baseada exclusivamente em <strong>SHA-3 — sem lattices ou curvas elípticas.</strong></p>
+                        <div class="algo-stats">
+                            <span class="tag-hybrid">Vida útil: 20+ anos</span>
+                            <span>Evidência regulatória BACEN</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="findings-grid" data-reveal="up">
+                <div class="findings-grid" data-reveal="up" style="margin-top: 2.5rem;">
                     <div class="finding-card">
                         <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
-                        <h4>PQC é viável operacionalmente</h4>
-                        <p>ML-KEM-512 e ML-DSA-44 operam dentro dos limites de SLA do PIX sem exigir upgrades de infraestrutura hardware.</p>
+                        <h4>Nunca usar ML-KEM para dados diretamente</h4>
+                        <p>ML-KEM é um KEM, não um cipher. Sequência correta: gerar DEK aleatória → AES-256-GCM para dados → ML-KEM-768 para encapsular a DEK (Envelope Encryption).</p>
                     </div>
                     <div class="finding-card">
                         <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
-                        <h4>Modo híbrido é a estratégia mais segura</h4>
-                        <p>Durante a transição, operar PQC + clássico em paralelo elimina o risco de vulnerabilidades desconhecidas em algoritmos novos.</p>
+                        <h4>CA raiz: SLH-DSA é obrigatório</h4>
+                        <p>A chave raiz tem vida útil de 10–20 anos. SLH-DSA-128s é baseada exclusivamente em SHA-3 — o nível de conservadorismo correto para uma âncora de confiança que precisa durar décadas.</p>
                     </div>
                     <div class="finding-card">
                         <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
-                        <h4>Cloud amplifica o overhead do PQC</h4>
-                        <p>Em ambientes cloud, a latência de rede domina sobre o overhead computacional do PQC, reforçando a necessidade de HTTP/3 e CDN-edge.</p>
+                        <h4>PASETO v4 como formato PQC-native</h4>
+                        <p>JWT com RS256/ES256 não suporta ML-DSA nativamente. Use PASETO v4 para tokens em contextos PQC. Mantenha JWT como fallback durante a transição e migre progressivamente.</p>
                     </div>
                     <div class="finding-card">
                         <div class="finding-icon"><i data-lucide="check-circle-2"></i></div>
-                        <h4>Cripto-agilidade é obrigatória</h4>
-                        <p>O NIST continuará evoluindo os padrões PQC. Arquitetura com camada de abstração criptográfica é indispensável para longevidade.</p>
+                        <h4>HTTP/3 é essencial para PQC em rede</h4>
+                        <p>Um certificado Kyber + Dilithium pode chegar a 5KB — 20× maior que RSA. No TCP causa fragmentação e retransmissão. QUIC/HTTP/3 com streams independentes elimina esse problema.</p>
                     </div>
                 </div>
             </div>
@@ -473,37 +566,62 @@
                 <div class="section-header" data-reveal="left">
                     <span class="section-tag">Plano de Ação</span>
                     <h2>Roadmap de implementação</h2>
-                    <p>Plano faseado em 3 etapas para migração segura e progressiva ao PQC.</p>
+                    <p>5 fases para migração segura e progressiva — critério de aceite SOx claro antes de avançar em cada etapa. Nenhuma fase é big bang.</p>
                 </div>
                 <div class="timeline">
                     <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 1 · 0–6 meses</div>
+                        <div class="time">Fase 0 · Meses 1–3</div>
                         <div class="content">
-                            <h3>Projeto Piloto — Ecossistema PIX</h3>
-                            <p>Implantação de ML-KEM-512 em sandbox controlado para encapsulamento de chaves de sessão TLS no fluxo PIX. Métricas de latência e integridade monitoradas 24/7. Validação em parceria com o BACEN.</p>
+                            <h3>Fundação</h3>
+                            <p>Instalar liboqs 0.10+ em staging com AVX2 habilitado. Configurar liboqs-go com CGO. Criar CA PQC interna paralela (raiz SLH-DSA-128s + intermediária ML-DSA-65). Criar microserviço de auditoria PQC com hash chain ML-DSA-65. Documentar inventário completo de algoritmos clássicos em uso. Aprovação formal do plano pelo Comitê de Segurança e diretoria.</p>
                             <div class="timeline-tags">
-                                <span>ML-KEM-512</span><span>TLS 1.3</span><span>Sandbox PIX</span>
+                                <span>liboqs 0.10+</span><span>CA PQC paralela</span><span>Audit hash chain</span><span>Inventário</span>
                             </div>
+                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: Inventário de algoritmos financeiros + evidência de hash chain funcionando</div>
                         </div>
                     </div>
                     <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 2 · 6–18 meses</div>
+                        <div class="time">Fase 1 · Meses 4–9</div>
                         <div class="content">
-                            <h3>Expansão Híbrida — Microserviços e Auditoria</h3>
-                            <p>Rollout do modelo dual-stack para microserviços críticos. Implementação de hash chains com ML-DSA para trilhas de auditoria SOx. Migração das APIs Open Finance para HTTP/3 com suporte PQC.</p>
+                            <h3>Hot Paths — Auth, PIX e API Gateway</h3>
+                            <p>Migrar Auth/IAM e PIX para FFI → liboqs (ML-KEM-768 + ML-DSA-65) em modo híbrido. Migrar API Gateway para TLS Proxy com X25519 + ML-KEM-768. Migrar Key Wrapping para FFI com Envelope Encryption. Deploy de Admission Controller no Kubernetes (rejeitar imagens sem assinatura). Binários e imagens Docker assinados com ML-DSA-65. Rollout gradual: 10% → 25% → 50% → 100% com feature flags.</p>
                             <div class="timeline-tags">
-                                <span>ML-DSA-44</span><span>HTTP/3</span><span>Open Finance</span><span>SOx</span>
+                                <span>ML-KEM-768</span><span>ML-DSA-65</span><span>PIX / Auth</span><span>Admission Controller</span>
                             </div>
+                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: Log de handshake PQC (Auth/IAM) + assinatura ML-DSA em transações PIX (SOx 302)</div>
                         </div>
                     </div>
                     <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 3 · 18–36 meses</div>
+                        <div class="time">Fase 2 · Meses 10–18</div>
                         <div class="content">
-                            <h3>Consolidação PQC-First</h3>
-                            <p>PQC como padrão primário em toda a infraestrutura. Depreciação gradual de RSA-2048. Cripto-agilidade total com Data Adapter para acompanhar a evolução do NIST. Certificação de conformidade PQC.</p>
+                            <h3>Infra e PKI</h3>
+                            <p>Migrar todos os certificados internos para CA PQC (ML-DSA-65). Migrar mTLS do service mesh para híbrido X25519 + ML-KEM-768. Migrar PAM e Key Escrow para microserviços dedicados. Configurar SIEM com hash chain PQC (ML-DSA-65 por evento + SLH-DSA-128s diário). Migrar archives regulatórios para SLH-DSA-128s + ML-KEM-1024. Migrar backups frios e charts Terraform/Helm.</p>
                             <div class="timeline-tags">
-                                <span>PQC-First</span><span>Cripto-Agilidade</span><span>Nasdaq Compliance</span>
+                                <span>PKI completa</span><span>SIEM PQC</span><span>SLH-DSA archives</span><span>PAM + Key Escrow</span>
                             </div>
+                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: 100% certs internos na CA PQC + audit trail hash chain ativo (SOx 802)</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-reveal="up">
+                        <div class="time">Fase 3 · Meses 19–30</div>
+                        <div class="content">
+                            <h3>PQC Puro</h3>
+                            <p>Remover X25519 dos hot paths (ML-KEM-768 puro em Auth, PIX, Gateway). Migrar Open Banking para ML-KEM-768 puro em coordenação com ICP-Brasil e BACEN. Descomissionar CA RSA antiga após migração completa. Migrar tokens para PASETO v4 com ML-DSA-65 puro (remover JWT ES256). Verificação de integridade de 100% dos backups históricos. Audit final de cobertura PQC para certificação SOx anual.</p>
+                            <div class="timeline-tags">
+                                <span>PQC-First</span><span>PASETO v4</span><span>Open Finance</span><span>Nasdaq Compliance</span>
+                            </div>
+                            <div class="risk-level high" style="margin-top:12px; display:inline-block;">Critério SOx: Zero algoritmos clássicos em hot paths financeiros + descomissionamento CA RSA documentado</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-reveal="up">
+                        <div class="time">Fase 4 · A partir do mês 31</div>
+                        <div class="content">
+                            <h3>Manutenção e Cripto-Agilidade Contínua</h3>
+                            <p>Monitoramento contínuo de vulnerabilidades em ML-KEM, ML-DSA e SLH-DSA. Rotação anual de chaves ML-DSA em serviços críticos (dual-control obrigatório). Revisão anual do plano PQC com base em avanços de computação quântica. Testes de restore trimestrais com verificação de assinatura PQC. Atualização de liboqs para cada nova versão de segurança publicada pelo NIST.</p>
+                            <div class="timeline-tags">
+                                <span>Cripto-Agilidade</span><span>Rotação de Chaves</span><span>DR Trimestral</span><span>NIST Updates</span>
+                            </div>
+                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: Relatório anual de postura PQC entregue na auditoria + evidência de rotação dual-control</div>
                         </div>
                     </div>
                 </div>
