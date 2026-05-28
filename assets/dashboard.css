@@ -25,9 +25,8 @@ body {
 .page-shell { position: relative; min-height: 100vh; overflow-x: hidden; }
 .main-wrap { position: relative; z-index: 2; padding: 24px; max-width: 1440px; }
 .hero-panel {
-    display: grid;
-    grid-template-columns: minmax(0, 1.55fr) minmax(320px, .85fr);
-    gap: 20px;
+    display: block;
+    width: 100%;
     margin-bottom: 20px;
 }
 .hero-copy, .glass-panel, .soft-card {

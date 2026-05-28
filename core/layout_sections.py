@@ -38,11 +38,11 @@ def _build_main_filter_cols(df: pd.DataFrame) -> list:
 def build_hero_section(app, _df: pd.DataFrame, logo_asset_name: str) -> html.Div:
     return html.Div(
         className="hero-panel",
-        style={"textAlign": "center", "display": "flex", "flexDirection": "column", "alignItems": "center"},
+        style={"textAlign": "center"},
         children=[
             html.Div(
                 className="hero-copy",
-                style={"maxWidth": "800px"},
+                style={"width": "100%"},
                 children=[
                     html.Div(
                         [
