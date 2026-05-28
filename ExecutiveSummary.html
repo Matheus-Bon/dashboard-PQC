@@ -24,7 +24,6 @@
                 <a href="#performance">Performance</a>
                 <a href="#estrategia">Estratégia</a>
                 <a href="#insights">Algoritmos</a>
-                <a href="#roadmap">Roadmap</a>
                 <a href="/" class="btn btn-primary btn-sm nav-cta">
                     <i data-lucide="layout-dashboard"></i>
                     <span>Dashboard</span>
@@ -560,73 +559,6 @@
             </div>
         </section>
 
-        <!-- ROADMAP -->
-        <section id="roadmap" class="section alternate">
-            <div class="container">
-                <div class="section-header" data-reveal="left">
-                    <span class="section-tag">Plano de Ação</span>
-                    <h2>Roadmap de implementação</h2>
-                    <p>5 fases para migração segura e progressiva — critério de aceite SOx claro antes de avançar em cada etapa. Nenhuma fase é big bang.</p>
-                </div>
-                <div class="timeline">
-                    <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 0 · Meses 1–3</div>
-                        <div class="content">
-                            <h3>Fundação</h3>
-                            <p>Instalar liboqs 0.10+ em staging com AVX2 habilitado. Configurar liboqs-go com CGO. Criar CA PQC interna paralela (raiz SLH-DSA-128s + intermediária ML-DSA-65). Criar microserviço de auditoria PQC com hash chain ML-DSA-65. Documentar inventário completo de algoritmos clássicos em uso. Aprovação formal do plano pelo Comitê de Segurança e diretoria.</p>
-                            <div class="timeline-tags">
-                                <span>liboqs 0.10+</span><span>CA PQC paralela</span><span>Audit hash chain</span><span>Inventário</span>
-                            </div>
-                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: Inventário de algoritmos financeiros + evidência de hash chain funcionando</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 1 · Meses 4–9</div>
-                        <div class="content">
-                            <h3>Hot Paths — Auth, PIX e API Gateway</h3>
-                            <p>Migrar Auth/IAM e PIX para FFI → liboqs (ML-KEM-768 + ML-DSA-65) em modo híbrido. Migrar API Gateway para TLS Proxy com X25519 + ML-KEM-768. Migrar Key Wrapping para FFI com Envelope Encryption. Deploy de Admission Controller no Kubernetes (rejeitar imagens sem assinatura). Binários e imagens Docker assinados com ML-DSA-65. Rollout gradual: 10% → 25% → 50% → 100% com feature flags.</p>
-                            <div class="timeline-tags">
-                                <span>ML-KEM-768</span><span>ML-DSA-65</span><span>PIX / Auth</span><span>Admission Controller</span>
-                            </div>
-                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: Log de handshake PQC (Auth/IAM) + assinatura ML-DSA em transações PIX (SOx 302)</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 2 · Meses 10–18</div>
-                        <div class="content">
-                            <h3>Infra e PKI</h3>
-                            <p>Migrar todos os certificados internos para CA PQC (ML-DSA-65). Migrar mTLS do service mesh para híbrido X25519 + ML-KEM-768. Migrar PAM e Key Escrow para microserviços dedicados. Configurar SIEM com hash chain PQC (ML-DSA-65 por evento + SLH-DSA-128s diário). Migrar archives regulatórios para SLH-DSA-128s + ML-KEM-1024. Migrar backups frios e charts Terraform/Helm.</p>
-                            <div class="timeline-tags">
-                                <span>PKI completa</span><span>SIEM PQC</span><span>SLH-DSA archives</span><span>PAM + Key Escrow</span>
-                            </div>
-                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: 100% certs internos na CA PQC + audit trail hash chain ativo (SOx 802)</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 3 · Meses 19–30</div>
-                        <div class="content">
-                            <h3>PQC Puro</h3>
-                            <p>Remover X25519 dos hot paths (ML-KEM-768 puro em Auth, PIX, Gateway). Migrar Open Banking para ML-KEM-768 puro em coordenação com ICP-Brasil e BACEN. Descomissionar CA RSA antiga após migração completa. Migrar tokens para PASETO v4 com ML-DSA-65 puro (remover JWT ES256). Verificação de integridade de 100% dos backups históricos. Audit final de cobertura PQC para certificação SOx anual.</p>
-                            <div class="timeline-tags">
-                                <span>PQC-First</span><span>PASETO v4</span><span>Open Finance</span><span>Nasdaq Compliance</span>
-                            </div>
-                            <div class="risk-level high" style="margin-top:12px; display:inline-block;">Critério SOx: Zero algoritmos clássicos em hot paths financeiros + descomissionamento CA RSA documentado</div>
-                        </div>
-                    </div>
-                    <div class="timeline-item" data-reveal="up">
-                        <div class="time">Fase 4 · A partir do mês 31</div>
-                        <div class="content">
-                            <h3>Manutenção e Cripto-Agilidade Contínua</h3>
-                            <p>Monitoramento contínuo de vulnerabilidades em ML-KEM, ML-DSA e SLH-DSA. Rotação anual de chaves ML-DSA em serviços críticos (dual-control obrigatório). Revisão anual do plano PQC com base em avanços de computação quântica. Testes de restore trimestrais com verificação de assinatura PQC. Atualização de liboqs para cada nova versão de segurança publicada pelo NIST.</p>
-                            <div class="timeline-tags">
-                                <span>Cripto-Agilidade</span><span>Rotação de Chaves</span><span>DR Trimestral</span><span>NIST Updates</span>
-                            </div>
-                            <div class="risk-level medium" style="margin-top:12px; display:inline-block;">Critério SOx: Relatório anual de postura PQC entregue na auditoria + evidência de rotação dual-control</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- FOOTER -->
