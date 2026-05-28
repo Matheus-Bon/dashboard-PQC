@@ -35,22 +35,34 @@ def _build_main_filter_cols(df: pd.DataFrame) -> list:
         )
     return cols
 
+_CHIP_STYLE = {
+    "display": "inline-flex",
+    "alignItems": "center",
+    "padding": "6px 14px",
+    "borderRadius": "999px",
+    "background": "rgba(1,3,38,0.05)",
+    "border": "1px solid rgba(1,3,38,0.09)",
+    "color": "#4B5563",
+    "fontSize": "12px",
+    "fontWeight": "600",
+    "letterSpacing": "0.01em",
+}
+
 def build_hero_section(app, _df: pd.DataFrame, logo_asset_name: str) -> html.Div:
     return html.Div(
         className="hero-panel",
-        style={"textAlign": "center"},
         children=[
             html.Div(
                 className="hero-copy",
-                style={"width": "100%"},
+                style={"width": "100%", "padding": "40px 32px"},
                 children=[
                     html.Div(
                         [
                             html.Img(src=app.get_asset_url(logo_asset_name), className="brand-logo inter-logo", alt="Banco Inter"),
+                            html.Div(className="brand-divider"),
                             html.Img(src=app.get_asset_url("logo-puc.png"), className="brand-logo puc-logo", alt="PUC Minas"),
                         ],
                         className="brand-strip",
-                        style={"justifyContent": "center", "marginBottom": "20px"}
                     ),
                     html.Div(
                         [
@@ -63,16 +75,31 @@ def build_hero_section(app, _df: pd.DataFrame, logo_asset_name: str) -> html.Div
                                 className="hero-summary-btn",
                                 style={
                                     "display": "inline-block",
-                                    "marginTop": "12px",
-                                    "padding": "10px 24px",
-                                    "background": "rgba(255,122,0,0.1)",
-                                    "color": "#FF7A00",
-                                    "border": "1px solid rgba(255,122,0,0.35)",
-                                    "borderRadius": "8px",
+                                    "marginTop": "24px",
+                                    "padding": "12px 28px",
+                                    "background": "#FF7A00",
+                                    "color": "#fff",
+                                    "border": "none",
+                                    "borderRadius": "10px",
                                     "fontWeight": "700",
-                                    "fontSize": "0.9rem",
+                                    "fontSize": "0.92rem",
                                     "textDecoration": "none",
-                                    "transition": "all 0.25s",
+                                    "boxShadow": "0 4px 16px rgba(255,122,0,0.32)",
+                                    "letterSpacing": "-0.01em",
+                                },
+                            ),
+                            html.Div(
+                                [
+                                    html.Span("6 Algoritmos avaliados", style=_CHIP_STYLE),
+                                    html.Span("Cloud + Local", style=_CHIP_STYLE),
+                                    html.Span("NIST FIPS 203 · 204 · 205", style=_CHIP_STYLE),
+                                ],
+                                style={
+                                    "display": "flex",
+                                    "gap": "10px",
+                                    "marginTop": "20px",
+                                    "justifyContent": "center",
+                                    "flexWrap": "wrap",
                                 },
                             ),
                         ],
